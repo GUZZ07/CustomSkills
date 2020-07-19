@@ -20,21 +20,55 @@ namespace SkillDesigner
         public MainForm()
         {
             InitializeComponent();
-            CoordinateSystem = new CoordinateSystem();
+			#region Coordinate System
+			CoordinateSystem = new CoordinateSystem();
             Controls.Add(CoordinateSystem);
-
-            timer = new Timer()
+			#endregion
+			#region Timer
+			timer = new Timer()
             {
                 Interval = 1000 / 60
             };
             timer.Tick += Timer_Tick;
             timer.Start();
-
+            #endregion
+            #region ZoomUp
+            var zoomUp = ControlCreator.CreateButton();
+            zoomUp.Text = "+";
+            zoomUp.Location = new Point()
+            {
+                X = CoordinateSystem.Width + (Width - CoordinateSystem.Width) / 2 / 2 - zoomUp.Width / 2,
+                Y = Height / 3 / 2 - zoomUp.Height / 2
+            };
+            zoomUp.MouseClick += (sender, args) =>
+            {
+                CoordinateSystem.ZoomUp2();
+            };
+            Controls.Add(zoomUp);
+            #endregion
+            #region ZoomDown
+            var zoomDown = ControlCreator.CreateButton();
+            zoomDown.Text = "-";
+            zoomDown.Location = new Point()
+            {
+                X = CoordinateSystem.Width + (Width - CoordinateSystem.Width) / 2 * 3 / 2 - zoomDown.Width / 2,
+                Y = Height / 3 / 2 - zoomDown.Height / 2
+            };
+            zoomDown.MouseClick += (sender, args) =>
+            {
+                CoordinateSystem.ZoomDown2();
+            };
+            Controls.Add(zoomDown);
+            #endregion
+            #region Self
             MouseWheel += MouseWheenHandler;
-
+            var screen = Screen.PrimaryScreen.WorkingArea;
+            DesktopLocation = new Point(screen.Width / 2 - Width / 2, screen.Height / 2 - Height / 2);
+            #endregion
         }
+        #region Events
 
-		private void MouseWheenHandler(object sender, MouseEventArgs args)
+        private void MouseWheenHandler(object sender, MouseEventArgs args)
 		{
             var pos = MousePosition;
             var relative = PointToScreen(CoordinateSystem.Location);
@@ -50,7 +84,7 @@ namespace SkillDesigner
                 }
                 else
 				{
-                    CoordinateSystem.Transport(Δ, 0);
+                    CoordinateSystem.Transport(-Δ, 0);
 
                 }
             }
@@ -63,9 +97,30 @@ namespace SkillDesigner
                 CoordinateSystem.Draw(graphics);
             }
         }
-
-        #region Natives
-        private static class NativeMethods
+        #endregion
+        #region Controls
+        private static class ControlCreator
+		{
+            public static Button CreateButton()
+			{
+                var button = new Button
+                {
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Text = "emmm",
+                    Size = new Size(88, 44),
+                    FlatStyle = FlatStyle.Flat,
+                    BackColor = Color.FromArgb(170, 0, 255, 255),
+                };
+                button.FlatAppearance.MouseOverBackColor = Color.FromArgb(130, Color.White);
+                button.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, Color.Cyan);
+                button.FlatAppearance.BorderColor = Color.FromArgb(255, 0, 0, 255);
+                button.FlatAppearance.BorderSize = 2;
+                return button;
+            }
+		}
+		#endregion
+		#region Natives
+		private static class NativeMethods
         {
             [DllImport("user32.dll")]
             public static extern short GetKeyState(Keys key);

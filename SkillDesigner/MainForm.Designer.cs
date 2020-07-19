@@ -17,10 +17,10 @@
             {
                 components.Dispose();
             }
-            if(disposing)
-			{
+            if (disposing)
+            {
                 timer?.Stop();
-			}
+            }
             base.Dispose(disposing);
         }
 
@@ -31,23 +31,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.SuspendLayout();
-			// 
-			// MainForm
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Aqua;
+            this.SuspendLayout();
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Aqua;
             this.ClientSize = new System.Drawing.Size(1000, 320 * 2);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-			this.MaximizeBox = false;
-			this.Name = "MainForm";
-			this.Text = "SkillDesigner";
-			this.ResumeLayout(false);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "MainForm";
+            this.Text = "SkillDesigner";
+            this.ResumeLayout(false);
 
         }
 
-		#endregion
+        #endregion
     }
 }
 

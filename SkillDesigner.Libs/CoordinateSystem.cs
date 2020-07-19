@@ -33,7 +33,11 @@ namespace SkillDesigner.Libs
 			get;
 			private set;
 		}
-		public int PixelPerPoint { get; }
+		public int PixelPerPoint
+		{
+			get;
+			private set;
+		}
 
 		private Bitmap background;
 		private Bitmap texture;
@@ -59,7 +63,7 @@ namespace SkillDesigner.Libs
 		{
 			return Transform(point.X, point.Y);
 		}
-		
+
 		/// <summary>
 		/// 变换到像素坐标上
 		/// </summary>
@@ -94,6 +98,56 @@ namespace SkillDesigner.Libs
 			HighX += Δx;
 			LowY += Δy;
 			HighY += Δy;
+			PaintBackground();
+		}
+
+		public void ZoomUp2()
+		{
+			var width = HighX - LowX;
+			var height = HighY - LowY;
+
+
+			var cx = HighX + LowX >> 1;
+			var cy = HighY + LowY >> 1;
+
+			PixelPerPoint *= 2;
+
+			width /= 2;
+			height /= 2;
+
+			LowX = cx - width / 2;
+			HighX = cx + width / 2;
+
+			LowY = cy - height / 2;
+			HighY = cy + height / 2;
+
+			PaintBackground();
+		}
+
+		public void ZoomDown2()
+		{
+			if (PixelPerPoint == 1)
+			{
+				return;
+			}
+			var width = HighX - LowX;
+			var height = HighY - LowY;
+
+
+			var cx = HighX + LowX >> 1;
+			var cy = HighY + LowY >> 1;
+
+			PixelPerPoint /= 2;
+
+			width *= 2;
+			height *= 2;
+
+			LowX = cx - width / 2;
+			HighX = cx + width / 2;
+
+			LowY = cy - height / 2;
+			HighY = cy + height / 2;
+
 			PaintBackground();
 		}
 
@@ -133,6 +187,16 @@ namespace SkillDesigner.Libs
 			graphics.DrawRectangle(Pens.Yellow, 0, 0, Width - 1, Height - 1);
 		}
 
+		private void DrawMouseText(Graphics graphics, PointF mousePos, string text)
+		{
+			var font = Font;
+			var size = graphics.MeasureString(text, font);
+			var rect = new RectangleF(mousePos, size);
+			rect.X -= size.Width;
+			rect.Y -= size.Height;
+			graphics.DrawString(text, font, SystemBrushes.InfoText, rect);
+		}
+
 		private void DrawMouseAxis(Graphics graphics)
 		{
 			var relative = PointToScreen(Location);
@@ -145,6 +209,7 @@ namespace SkillDesigner.Libs
 			{
 				graphics.DrawLine(pen, Transform(pos.X, 0), Transform(pos));
 				graphics.DrawLine(pen, Transform(0, pos.Y), Transform(pos));
+				DrawMouseText(graphics, mousePos, $"({pos.X / 16: 0.0},{pos.Y / 16: 0.0})");
 			}
 		}
 
