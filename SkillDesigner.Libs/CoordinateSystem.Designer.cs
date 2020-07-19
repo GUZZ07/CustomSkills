@@ -17,6 +17,11 @@
 			{
 				components.Dispose();
 			}
+			if (disposing)
+			{
+				xyAxis?.Dispose();
+				texture?.Dispose();
+			}
 			base.Dispose(disposing);
 		}
 

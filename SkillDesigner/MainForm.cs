@@ -24,14 +24,6 @@ namespace SkillDesigner
 			CoordinateSystem = new CoordinateSystem();
             Controls.Add(CoordinateSystem);
 			#endregion
-			#region Timer
-			timer = new Timer()
-            {
-                Interval = 1000 / 60
-            };
-            timer.Tick += Timer_Tick;
-            timer.Start();
-            #endregion
             #region ZoomUp
             var zoomUp = ControlCreator.CreateButton();
             zoomUp.Text = "+";
@@ -61,14 +53,27 @@ namespace SkillDesigner
             Controls.Add(zoomDown);
             #endregion
             #region Self
-            MouseWheel += MouseWheenHandler;
+            MouseWheel += MouseWheelHandler;
+            Load += LoadHandler;
             var screen = Screen.PrimaryScreen.WorkingArea;
             DesktopLocation = new Point(screen.Width / 2 - Width / 2, screen.Height / 2 - Height / 2);
             #endregion
         }
-        #region Events
 
-        private void MouseWheenHandler(object sender, MouseEventArgs args)
+        #region Events
+        private void LoadHandler(object sender, EventArgs args)
+        {
+            #region Timer
+            timer = new Timer()
+            {
+                Interval = 1000 / 60
+            };
+            timer.Tick += Timer_Tick;
+            timer.Start();
+            #endregion
+        }
+
+        private void MouseWheelHandler(object sender, MouseEventArgs args)
 		{
             var pos = MousePosition;
             var relative = PointToScreen(CoordinateSystem.Location);

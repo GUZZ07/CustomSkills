@@ -39,10 +39,13 @@ namespace SkillDesigner.Libs
 			private set;
 		}
 
-		private Bitmap background;
+		private List<ProjView> currentProjs;
+
+		private Bitmap xyAxis;
 		private Bitmap texture;
 
 		private Pen pen;
+		private SolidBrush brush;
 
 		public CoordinateSystem(int lowX = -160, int lowY = -160, int highX = 160, int highY = 160, int pixelPerPoint = 2)
 		{
@@ -52,11 +55,17 @@ namespace SkillDesigner.Libs
 			HighY = highY;
 			PixelPerPoint = pixelPerPoint;
 			InitializeComponent();
+			Load += CoordinateSystem_Load;
+			MouseDown += (sender, args) =>
+			{
+				MessageBox.Show("emmm");
+			};
 			Width = PixelPerPoint * (HighX - LowX);
 			Height = PixelPerPoint * (HighY - LowY);
 			pen = new Pen(Color.FromArgb(255 / 3, Color.Blue));
+			brush = new SolidBrush(Color.Purple);
 			texture = new Bitmap(Width, Height);
-			PaintBackground();
+			PrepareXYAxisTexture();
 		}
 
 		public Vector Transform(Vector point)
@@ -98,7 +107,7 @@ namespace SkillDesigner.Libs
 			HighX += Δx;
 			LowY += Δy;
 			HighY += Δy;
-			PaintBackground();
+			CoordinateSystemTransformed();
 		}
 
 		public void ZoomUp2()
@@ -121,7 +130,7 @@ namespace SkillDesigner.Libs
 			LowY = cy - height / 2;
 			HighY = cy + height / 2;
 
-			PaintBackground();
+			CoordinateSystemTransformed();
 		}
 
 		public void ZoomDown2()
@@ -148,9 +157,32 @@ namespace SkillDesigner.Libs
 			LowY = cy - height / 2;
 			HighY = cy + height / 2;
 
-			PaintBackground();
+			CoordinateSystemTransformed();
 		}
 
+		private void CoordinateSystemTransformed()
+		{
+			PrepareXYAxisTexture();
+			foreach (var view in currentProjs)
+			{
+				view.Update(this);
+			}
+		}
+		#region Events
+
+		private void CoordinateSystem_Load(object sender, EventArgs args)
+		{
+			currentProjs = new List<ProjView>()
+			{
+				new ProjView(new ProjData { Position = Vector.FromPolar(Math.PI * 1.5, 16 * 3.5f), ProjType = 636 }, this)
+			};
+			foreach (var view in currentProjs)
+			{
+				Parent.Controls.Add(view);
+			}
+		}
+
+		#endregion
 		#region Draw
 		private void CoordinateSystem_Paint(object sender, PaintEventArgs args)
 		{
@@ -158,13 +190,13 @@ namespace SkillDesigner.Libs
 			Draw(graphics);
 		}
 
-		private void PaintBackground()
+		private void PrepareXYAxisTexture()
 		{
-			background ??= new Bitmap(Width, Height);
-			using (var graphics = Graphics.FromImage(background))
+			xyAxis ??= new Bitmap(Width, Height);
+			using (var graphics = Graphics.FromImage(xyAxis))
 			{
-				Clear(graphics);
-				DrawXYAxis(graphics);
+				graphics.Clear(Color.Transparent);
+				PrepareXYAxis(graphics);
 				DrawBorder(graphics);
 			}
 		}
@@ -172,14 +204,11 @@ namespace SkillDesigner.Libs
 		public void Draw(Graphics graphics)
 		{
 			using var textureGraphics = Graphics.FromImage(texture);
-			textureGraphics.DrawImage(background, 0, 0);
+			textureGraphics.Clear(Color.Aqua);
+			DrawProjDatas(textureGraphics);
+			DrawXYAxis(textureGraphics);
 			DrawMouseAxis(textureGraphics);
 			graphics.DrawImage(texture, 0, 0);
-		}
-
-		public void Clear(Graphics graphics)
-		{
-			graphics.Clear(Color.Aqua);
 		}
 
 		private void DrawBorder(Graphics graphics)
@@ -215,6 +244,11 @@ namespace SkillDesigner.Libs
 
 		private void DrawXYAxis(Graphics graphics)
 		{
+			graphics.DrawImage(xyAxis, 0, 0);
+		}
+
+		private void PrepareXYAxis(Graphics graphics)
+		{
 			graphics.DrawLine(Pens.Black, Transform(LowX, 0), Transform(HighX, 0));
 			graphics.DrawLine(Pens.Black, Transform(0, LowY), Transform(0, HighY));
 			pen.Color = Color.FromArgb(255 / 3, 0, 0, 255);
@@ -232,6 +266,20 @@ namespace SkillDesigner.Libs
 					graphics.DrawLine(pen, Transform(LowX, i), Transform(HighX, i));
 				}
 			}
+		}
+
+		private void DrawProjDatas(Graphics graphics)
+		{
+			foreach (var view in currentProjs)
+			{
+				DrawProjData(graphics, view);
+			}
+		}
+
+		private void DrawProjData(Graphics graphics, ProjView view)
+		{
+			var rect = new RectangleF(view.Location, view.Size);
+			graphics.FillRectangle(brush, rect);
 		}
 		#endregion
 	}

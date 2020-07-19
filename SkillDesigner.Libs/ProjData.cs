@@ -35,7 +35,7 @@ namespace SkillDesigner.Libs
 			get;
 			set;
 		}
-		public Vector2 Position
+		public Vector Position
 		{
 			get;
 			set;
