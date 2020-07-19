@@ -7,15 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace SkillDesigner.Libs
 {
 	public partial class CoordinateSystem : UserControl
 	{
-		public int LowX { get; }
-		public int LowY { get; }
-		public int HighX { get; }
-		public int HighY { get; }
+		public int LowX
+		{
+			get;
+			private set;
+		}
+		public int LowY
+		{
+			get;
+			private set;
+		}
+		public int HighX
+		{
+			get;
+			private set;
+		}
+		public int HighY
+		{
+			get;
+			private set;
+		}
 		public int PixelPerPoint { get; }
 
 		private Bitmap background;
@@ -31,17 +48,11 @@ namespace SkillDesigner.Libs
 			HighY = highY;
 			PixelPerPoint = pixelPerPoint;
 			InitializeComponent();
-			Width = PixelPerPoint * (HighX - lowX);
-			Height = PixelPerPoint * (HighY - lowY);
+			Width = PixelPerPoint * (HighX - LowX);
+			Height = PixelPerPoint * (HighY - LowY);
 			pen = new Pen(Color.FromArgb(255 / 3, Color.Blue));
-			background = new Bitmap(Width, Height);
-			using (var graphics = Graphics.FromImage(background))
-			{
-				Clear(graphics);
-				DrawXYAxis(graphics);
-				DrawBorder(graphics);
-			}
 			texture = new Bitmap(Width, Height);
+			PaintBackground();
 		}
 
 		public Vector Transform(Vector point)
@@ -77,12 +88,33 @@ namespace SkillDesigner.Libs
 				LowY <= point.Y && point.Y <= HighY;
 		}
 
+		public void Transport(int Δx, int Δy)
+		{
+			LowX += Δx;
+			HighX += Δx;
+			LowY += Δy;
+			HighY += Δy;
+			PaintBackground();
+		}
+
+		#region Draw
 		private void CoordinateSystem_Paint(object sender, PaintEventArgs args)
 		{
 			var graphics = args.Graphics;
 			Draw(graphics);
 		}
 
+		private void PaintBackground()
+		{
+			background ??= new Bitmap(Width, Height);
+			using (var graphics = Graphics.FromImage(background))
+			{
+				Clear(graphics);
+				DrawXYAxis(graphics);
+				DrawBorder(graphics);
+			}
+		}
+		[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.Synchronized)]
 		public void Draw(Graphics graphics)
 		{
 			using var textureGraphics = Graphics.FromImage(texture);
@@ -136,5 +168,6 @@ namespace SkillDesigner.Libs
 				}
 			}
 		}
+		#endregion
 	}
 }
