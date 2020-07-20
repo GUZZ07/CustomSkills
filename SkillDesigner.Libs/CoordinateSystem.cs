@@ -39,10 +39,13 @@ namespace SkillDesigner.Libs
 			private set;
 		}
 
-		private List<ProjView> currentProjs;
+		private List<ProjView> projViews;
+
+		private const int ProjCount = 950;
 
 		private Bitmap xyAxis;
 		private Bitmap texture;
+		private Bitmap[] projTextures;
 
 		private Pen pen;
 		private SolidBrush brush;
@@ -54,20 +57,47 @@ namespace SkillDesigner.Libs
 			HighX = highX;
 			HighY = highY;
 			PixelPerPoint = pixelPerPoint;
+
 			InitializeComponent();
 			Load += CoordinateSystem_Load;
-			MouseDown += (sender, args) =>
-			{
-				MessageBox.Show("emmm");
-			};
+
 			Width = PixelPerPoint * (HighX - LowX);
 			Height = PixelPerPoint * (HighY - LowY);
+
 			pen = new Pen(Color.FromArgb(255 / 3, Color.Blue));
 			brush = new SolidBrush(Color.Purple);
-			texture = new Bitmap(Width, Height);
-			PrepareXYAxisTexture();
-		}
 
+			LoadBitmaps();
+			LoadViews();
+
+			CoordinateSystemTransformed();
+		}
+		#region Loads
+		private void LoadBitmaps()
+		{
+			xyAxis = new Bitmap(Width, Height);
+			texture = new Bitmap(Width, Height);
+
+			projTextures = new Bitmap[ProjCount];
+
+			projTextures[636] = Resource.Projectile636;
+		}
+		private void LoadViews()
+		{
+			var data = new ProjData
+			{
+				Position = Vector.FromPolar(Math.PI * 1.5, 16 * 3.5f),
+				ProjType = 636,
+				Speed = 14,
+				SpeedAngle = MathF.PI / 2
+			};
+			projViews = new List<ProjView>()
+			{
+				new ProjView(data)
+			};
+		}
+		#endregion
+		#region Transform
 		public Vector Transform(Vector point)
 		{
 			return Transform(point.X, point.Y);
@@ -93,14 +123,14 @@ namespace SkillDesigner.Libs
 				Y = HighY - y / PixelPerPoint
 			};
 		}
-
+		#endregion
 		public bool InRange(Vector point)
 		{
 			return
 				LowX <= point.X && point.X <= HighX &&
 				LowY <= point.Y && point.Y <= HighY;
 		}
-
+		#region ModifyCoordinate
 		public void Transport(int Δx, int Δy)
 		{
 			LowX += Δx;
@@ -163,23 +193,12 @@ namespace SkillDesigner.Libs
 		private void CoordinateSystemTransformed()
 		{
 			PrepareXYAxisTexture();
-			foreach (var view in currentProjs)
-			{
-				view.Update(this);
-			}
 		}
+		#endregion
 		#region Events
 
 		private void CoordinateSystem_Load(object sender, EventArgs args)
 		{
-			currentProjs = new List<ProjView>()
-			{
-				new ProjView(new ProjData { Position = Vector.FromPolar(Math.PI * 1.5, 16 * 3.5f), ProjType = 636 }, this)
-			};
-			foreach (var view in currentProjs)
-			{
-				Parent.Controls.Add(view);
-			}
 		}
 
 		#endregion
@@ -192,7 +211,6 @@ namespace SkillDesigner.Libs
 
 		private void PrepareXYAxisTexture()
 		{
-			xyAxis ??= new Bitmap(Width, Height);
 			using (var graphics = Graphics.FromImage(xyAxis))
 			{
 				graphics.Clear(Color.Transparent);
@@ -204,8 +222,8 @@ namespace SkillDesigner.Libs
 		public void Draw(Graphics graphics)
 		{
 			using var textureGraphics = Graphics.FromImage(texture);
-			textureGraphics.Clear(Color.Aqua);
-			DrawProjDatas(textureGraphics);
+			textureGraphics.Clear(Color.FromArgb(0xA5, 255, 255));
+			DrawProjViews(textureGraphics);
 			DrawXYAxis(textureGraphics);
 			DrawMouseAxis(textureGraphics);
 			graphics.DrawImage(texture, 0, 0);
@@ -268,18 +286,12 @@ namespace SkillDesigner.Libs
 			}
 		}
 
-		private void DrawProjDatas(Graphics graphics)
+		private void DrawProjViews(Graphics graphics)
 		{
-			foreach (var view in currentProjs)
+			foreach (var view in projViews)
 			{
-				DrawProjData(graphics, view);
+				view.Draw(graphics, this, brush, projTextures[view.Data.ProjType]);
 			}
-		}
-
-		private void DrawProjData(Graphics graphics, ProjView view)
-		{
-			var rect = new RectangleF(view.Location, view.Size);
-			graphics.FillRectangle(brush, rect);
 		}
 		#endregion
 	}

@@ -61,6 +61,16 @@ namespace SkillDesigner.Libs {
         }
         
         /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Projectile636 {
+            get {
+                object obj = ResourceManager.GetObject("Projectile636", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
         internal static byte[] ProjSizes {

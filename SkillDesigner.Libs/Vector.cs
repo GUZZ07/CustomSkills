@@ -78,12 +78,7 @@ namespace SkillDesigner.Libs
 
 		public override string ToString()
 		{
-			CultureInfo currentCulture = CultureInfo.CurrentCulture;
-			return string.Format(currentCulture, "{{X:{0} Y:{1}}}", new object[2]
-			{
-				X.ToString(currentCulture),
-				Y.ToString(currentCulture)
-			});
+			return $"({X:0.00},{Y:0.00})";
 		}
 
 		public Vector Deflect(double angle) => Vector.FromPolar(Angle + angle, PolarRadius);

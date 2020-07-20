@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.IO;
+using System.Drawing.Drawing2D;
 
 namespace SkillDesigner.Libs
 {
@@ -18,7 +19,8 @@ namespace SkillDesigner.Libs
 
 		public ProjData Data { get; }
 		public Vector ProjSize { get; }
-		public ProjView(ProjData data, CoordinateSystem coordinateSystem)
+		public bool NoRotation { get; set; }
+		public ProjView(ProjData data)
 		{
 			#region Initialize Sizes
 			if (ProjSizes == null)
@@ -31,18 +33,37 @@ namespace SkillDesigner.Libs
 			#endregion
 			Data = data;
 			ProjSize = ProjSizes[data.ProjType];
-			Visible = false;
-			MouseDown += (sender, args) =>
-			{
-				MessageBox.Show("hahaha");
-			};
-			Update(coordinateSystem);
 		}
-		public void Update(CoordinateSystem coordinateSystem)
+
+		public RectangleF GetRect(CoordinateSystem coordinateSystem)
 		{
-			Width = (int)(coordinateSystem.PixelPerPoint * ProjSize.X);
-			Height = (int)(coordinateSystem.PixelPerPoint * ProjSize.Y);
-			Location = coordinateSystem.Transform(Data.Position) - (Vector)Size / 2;
+			var pos = coordinateSystem.Transform(Data.Position);
+			var size = coordinateSystem.PixelPerPoint * ProjSize;
+
+			pos -= size / 2;
+			return new RectangleF(pos, size);
+		}
+
+		public void Draw(Graphics graphics, CoordinateSystem coordinateSystem, Brush brush = null, Bitmap texture = null)
+		{
+			var ppp = coordinateSystem.PixelPerPoint;
+			var matrix = graphics.Transform;
+			matrix.RotateAt(90, coordinateSystem.Transform(Data.Position));
+			matrix.RotateAt(-Data.SpeedAngle / MathF.PI * 180, coordinateSystem.Transform(Data.Position));
+			graphics.Transform = matrix;
+			graphics.FillRectangle(brush, GetRect(coordinateSystem));
+			if (texture != null)
+			{
+				var pos = coordinateSystem.Transform(Data.Position) - new Vector(texture.Width, ProjSize.Y) * ppp / 2;
+				var srcRect = new RectangleF(0, 0, texture.Width, texture.Height);
+				var destRect = new RectangleF(pos + new Vector(ppp, 0) / 2, srcRect.Size * ppp);
+				graphics.DrawImage(texture, destRect, srcRect, GraphicsUnit.Pixel);
+			}
+			graphics.ResetTransform();
+			if (!NoRotation)
+			{
+				Data.SpeedAngle += MathF.PI / 180;
+			}
 		}
 	}
 }
