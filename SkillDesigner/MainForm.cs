@@ -16,21 +16,22 @@ namespace SkillDesigner
 	public partial class MainForm : Form
     {
         private Timer timer;
+        public ProjDataDesigner Designer { get; }
         public CoordinateSystem CoordinateSystem { get; }
         public MainForm()
         {
             InitializeComponent();
-			#region Coordinate System
-			CoordinateSystem = new CoordinateSystem();
+            #region Coordinate System
+            CoordinateSystem = new CoordinateSystem();
             Controls.Add(CoordinateSystem);
-			#endregion
+            #endregion
             #region ZoomUp
             var zoomUp = ControlCreator.CreateButton();
             zoomUp.Text = "+";
             zoomUp.Location = new Point()
             {
-                X = CoordinateSystem.Width + (Width - CoordinateSystem.Width) / 2 / 2 - zoomUp.Width / 2,
-                Y = Height / 3 / 2 - zoomUp.Height / 2
+                X = CoordinateSystem.Width + (Width - CoordinateSystem.Width) / 2 * 3 / 2 - zoomUp.Width / 2,
+                Y = ClientSize.Height - zoomUp.Height - 25 - zoomUp.Height - 1
             };
             zoomUp.MouseClick += (sender, args) =>
             {
@@ -44,7 +45,7 @@ namespace SkillDesigner
             zoomDown.Location = new Point()
             {
                 X = CoordinateSystem.Width + (Width - CoordinateSystem.Width) / 2 * 3 / 2 - zoomDown.Width / 2,
-                Y = Height / 3 / 2 - zoomDown.Height / 2
+                Y = ClientSize.Height  - zoomDown.Height - 25
             };
             zoomDown.MouseClick += (sender, args) =>
             {
@@ -52,8 +53,35 @@ namespace SkillDesigner
             };
             Controls.Add(zoomDown);
             #endregion
-            #region Self
-            MouseWheel += MouseWheelHandler;
+            #region HideHitbox
+            var hideHitbox = ControlCreator.CreateCheckBox();
+            hideHitbox.Text = "隐藏碰撞箱";
+            hideHitbox.CheckedChanged += (sender, args) => ProjView.HideHitbox = hideHitbox.Checked;
+            hideHitbox.Location = new Point()
+            {
+                X = CoordinateSystem.Width + (Width - CoordinateSystem.Width) / 2 / 2 - zoomUp.Width / 2,
+                Y = zoomUp.Location.Y + (zoomUp.Height - hideHitbox.Height) / 2
+            };
+            Controls.Add(hideHitbox);
+            #endregion
+            #region HideTexture
+            var hideTexture = ControlCreator.CreateCheckBox();
+            hideTexture.Text = "隐藏贴图";
+            hideTexture.CheckedChanged += (sender, args) => ProjView.HideTexture = hideTexture.Checked;
+            hideTexture.Location = new Point()
+            {
+                X = CoordinateSystem.Width + (Width - CoordinateSystem.Width) / 2 / 2 - zoomDown.Width / 2,
+                Y = zoomDown.Location.Y + (zoomDown.Height - hideTexture.Height) / 2
+            };
+            Controls.Add(hideTexture);
+            #endregion
+            #region ProjDataDesigner
+            Designer = new ProjDataDesigner();
+            Designer.Location = new Point(320 * 2, 0);
+            Controls.Add(Designer);
+			#endregion
+			#region Self
+			MouseWheel += MouseWheelHandler;
             Load += LoadHandler;
             var screen = Screen.PrimaryScreen.WorkingArea;
             DesktopLocation = new Point(screen.Width / 2 - Width / 2, screen.Height / 2 - Height / 2);
@@ -106,6 +134,13 @@ namespace SkillDesigner
         #region Controls
         private static class ControlCreator
 		{
+            public static CheckBox CreateCheckBox()
+			{
+                var cb = new CheckBox();
+                cb.Size = new Size(100, 40);
+                cb.CheckAlign = ContentAlignment.MiddleLeft;
+                return cb;
+			}
             public static Button CreateButton()
 			{
                 var button = new Button
@@ -118,8 +153,8 @@ namespace SkillDesigner
                 };
                 button.FlatAppearance.MouseOverBackColor = Color.FromArgb(130, Color.White);
                 button.FlatAppearance.MouseDownBackColor = Color.FromArgb(200, Color.Cyan);
-                button.FlatAppearance.BorderColor = Color.FromArgb(255, 0, 0, 255);
-                button.FlatAppearance.BorderSize = 2;
+                button.FlatAppearance.BorderColor = Color.White;
+                button.FlatAppearance.BorderSize = 1;
                 return button;
             }
 		}

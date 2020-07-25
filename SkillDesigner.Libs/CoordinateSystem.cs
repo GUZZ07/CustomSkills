@@ -77,10 +77,6 @@ namespace SkillDesigner.Libs
 		{
 			xyAxis = new Bitmap(Width, Height);
 			texture = new Bitmap(Width, Height);
-
-			projTextures = new Bitmap[ProjCount];
-
-			projTextures[636] = Resource.Projectile636;
 		}
 		private void LoadViews()
 		{
@@ -91,9 +87,37 @@ namespace SkillDesigner.Libs
 				Speed = 14,
 				SpeedAngle = MathF.PI / 2
 			};
+			var data2 = new ProjData
+			{
+				Position = Vector.FromPolar(Math.PI * 1, 16 * 7.5f),
+				ProjType = 48,
+				Speed = 14,
+			};
+			var data3 = new ProjData
+			{
+				Position = Vector.FromPolar(Math.PI * 0.5, 16 * 7.5f),
+				ProjType = 238,
+				Speed = 14,
+			};
+			var data4 = new ProjData
+			{
+				Position = Vector.FromPolar(Math.PI * 0, 16 * 7.5f),
+				ProjType = 254,
+				Speed = 14,
+			};
+			var data5 = new ProjData
+			{
+				Position = Vector.FromPolar(Math.PI * 0.75, 16 * 7.5f),
+				ProjType = 465,
+				Speed = 14,
+			};
 			projViews = new List<ProjView>()
 			{
-				new ProjView(data)
+				new ProjView(data),
+				new ProjView(data2),
+				new ProjView(data3),
+				new ProjView(data4),
+				new ProjView(data5)
 			};
 		}
 		#endregion
@@ -199,6 +223,7 @@ namespace SkillDesigner.Libs
 
 		private void CoordinateSystem_Load(object sender, EventArgs args)
 		{
+			ProjView.LoadResources();
 		}
 
 		#endregion
@@ -290,7 +315,7 @@ namespace SkillDesigner.Libs
 		{
 			foreach (var view in projViews)
 			{
-				view.Draw(graphics, this, brush, projTextures[view.Data.ProjType]);
+				view.Draw(graphics, this, brush);
 			}
 		}
 		#endregion

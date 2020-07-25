@@ -21,6 +21,7 @@
 			{
 				xyAxis?.Dispose();
 				texture?.Dispose();
+				ProjView.ReleaseResources();
 			}
 			base.Dispose(disposing);
 		}

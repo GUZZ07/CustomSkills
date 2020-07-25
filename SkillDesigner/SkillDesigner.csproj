@@ -10,4 +10,10 @@
     <ProjectReference Include="..\SkillDesigner.Libs\SkillDesigner.Libs.csproj" />
   </ItemGroup>
 
+  <!--
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	<Exec Command="xcopy ../SkillDesigner.Libs/Projs $(OutDir)Projs /E /I /Y /Q" />
+  </Target>
+  -->
+
 </Project>
