@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Windows.Controls;
+using System.Windows.Shapes;
+using System.Windows.Media;
+using System.Windows.Input;
+using System.Windows;
 
 namespace SkillDesigner.Libs
 {
@@ -39,44 +42,58 @@ namespace SkillDesigner.Libs
 			private set;
 		}
 
-		private List<ProjView> projViews;
+
+		// private List<ProjView> projViews;
 
 		private const int ProjCount = 950;
 
-		private Bitmap xyAxis;
-		private Bitmap texture;
+		private const int gridLineCount = 100;
 
-		private Pen pen;
-		private SolidBrush brush;
+		private List<Line> horLines;
+		private List<Line> verLines;
 
-		public CoordinateSystem(int lowX = -160, int lowY = -160, int highX = 160, int highY = 160, int pixelPerPoint = 2)
+
+		public CoordinateSystem()
 		{
+			int lowX = -160; int lowY = -160; int highX = 160; int highY = 160; int pixelPerPoint = 2;
+
+			InitializeComponent();
+
 			LowX = lowX;
 			LowY = lowY;
 			HighX = highX;
 			HighY = highY;
 			PixelPerPoint = pixelPerPoint;
 
-			InitializeComponent();
-			Load += CoordinateSystem_Load;
+			horLines = new List<Line>(gridLineCount);
+			verLines = new List<Line>(gridLineCount);
 
-			Width = PixelPerPoint * (HighX - LowX);
-			Height = PixelPerPoint * (HighY - LowY);
+			for (int i = 1; i <= gridLineCount / 2; i++)
+			{
+				horLines.Add(new Line() { Style = (Style)Resources["HorAxis"], Y1 = 320 + 16 * i, Y2 = 320 + 16 * i });
+				horLines.Add(new Line() { Style = (Style)Resources["HorAxis"], Y1 = 320 - 16 * i, Y2 = 320 - 16 * i });
 
-			pen = new Pen(Color.FromArgb(255 / 3, Color.Blue));
-			brush = new SolidBrush(Color.Purple);
+				verLines.Add(new Line() { Style = (Style)Resources["VerAxis"], X1 = 320 + 16 * i, X2 = 320 + 16 * i });
+				verLines.Add(new Line() { Style = (Style)Resources["VerAxis"], X1 = 320 - 16 * i, X2 = 320 - 16 * i });
+			}
+			foreach (var line in horLines)
+			{
+				Grid.Children.Add(line);
+			}
+			foreach (var line in verLines)
+			{
+				Grid.Children.Add(line);
+			}
 
+			Loaded += CoordinateSystem_Loaded;
 
 			LoadBitmaps();
 			LoadViews();
-
-			CoordinateSystemTransformed();
 		}
 		#region Loads
 		private void LoadBitmaps()
 		{
-			xyAxis = new Bitmap(Width, Height);
-			texture = new Bitmap(Width, Height);
+
 		}
 		private void LoadViews()
 		{
@@ -111,14 +128,14 @@ namespace SkillDesigner.Libs
 				ProjType = 465,
 				Speed = 14,
 			};
-			projViews = new List<ProjView>()
-			{
-				new ProjView(data),
-				new ProjView(data2),
-				new ProjView(data3),
-				new ProjView(data4),
-				new ProjView(data5)
-			};
+			//projViews = new List<ProjView>()
+			//{
+			//	new ProjView(data),
+			//	new ProjView(data2),
+			//	new ProjView(data3),
+			//	new ProjView(data4),
+			//	new ProjView(data5)
+			//};
 		}
 		#endregion
 		#region Transform
@@ -161,7 +178,7 @@ namespace SkillDesigner.Libs
 			HighX += Δx;
 			LowY += Δy;
 			HighY += Δy;
-			CoordinateSystemTransformed();
+			CoordinateSystemTransformed(Δx, Δy);
 		}
 
 		public void ZoomUp2()
@@ -184,7 +201,7 @@ namespace SkillDesigner.Libs
 			LowY = cy - height / 2;
 			HighY = cy + height / 2;
 
-			CoordinateSystemTransformed();
+			//CoordinateSystemTransformed();
 		}
 
 		public void ZoomDown2()
@@ -211,47 +228,66 @@ namespace SkillDesigner.Libs
 			LowY = cy - height / 2;
 			HighY = cy + height / 2;
 
-			CoordinateSystemTransformed();
+			//CoordinateSystemTransformed();
 		}
 
-		private void CoordinateSystemTransformed()
+		private void CoordinateSystemTransformed(int Δx, int Δy)
 		{
-			PrepareXYAxisTexture();
+			void Modify(Line line)
+			{
+				line.X1 += Δx * PixelPerPoint;
+				line.Y1 -= Δy * PixelPerPoint;
+				line.X2 += Δx * PixelPerPoint;
+				line.Y2 -= Δy * PixelPerPoint;
+			}
+			foreach (var line in horLines)
+			{
+				Modify(line);
+			}
+			foreach (var line in verLines)
+			{
+				Modify(line);
+			}
+			Modify(XAxis);
+			Modify(YAxis);
 		}
 		#endregion
 		#region Events
 
-		private void CoordinateSystem_Load(object sender, EventArgs args)
+		private void CoordinateSystem_MouseWheel(object sender, MouseWheelEventArgs args)
 		{
-			ProjView.LoadResources();
+			var pos = args.MouseDevice.GetPosition(this);
+			if (0 <= pos.X && pos.Y < Width && 0 <= pos.Y && pos.Y < Height)
+			{
+				var Δ = args.Delta / 120 * 16 / 2;
+				if (!Keyboard.IsKeyDown(Key.LeftCtrl))
+				{
+					Transport(0, -Δ);
+				}
+				else
+				{
+					Transport(-Δ, 0);
+				}
+			}
+		}
+
+		private void CoordinateSystem_Loaded(object sender, EventArgs args)
+		{
+			// ProjView.LoadResources();
 		}
 
 		#endregion
-		#region Draw
-		private void CoordinateSystem_Paint(object sender, PaintEventArgs args)
-		{
-			var graphics = args.Graphics;
-			Draw(graphics);
-		}
 
-		private void PrepareXYAxisTexture()
-		{
-			using (var graphics = Graphics.FromImage(xyAxis))
-			{
-				graphics.Clear(Color.Transparent);
-				PrepareXYAxis(graphics);
-				DrawBorder(graphics);
-			}
-		}
+		#region Draw
+#if false
 		[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.Synchronized)]
-		public void Draw(Graphics graphics)
+		public void Draw()
 		{
 			using var textureGraphics = Graphics.FromImage(texture);
 			textureGraphics.Clear(Color.FromArgb(0xA5, 255, 255));
 			// textureGraphics.DrawImage(Parent.BackgroundImage, 0, 0);
 			// textureGraphics.Clear(Color.FromArgb(80, 0xA5, 255, 255));
 			DrawProjViews(textureGraphics);
-			DrawXYAxis(textureGraphics);
 			DrawMouseAxis(textureGraphics);
 			graphics.DrawImage(texture, 0, 0);
 		}
@@ -287,11 +323,6 @@ namespace SkillDesigner.Libs
 			}
 		}
 
-		private void DrawXYAxis(Graphics graphics)
-		{
-			graphics.DrawImage(xyAxis, 0, 0);
-		}
-
 		private void PrepareXYAxis(Graphics graphics)
 		{
 			graphics.DrawLine(Pens.Black, Transform(LowX, 0), Transform(HighX, 0));
@@ -321,6 +352,12 @@ namespace SkillDesigner.Libs
 				view.Draw(graphics, this, brush);
 			}
 		}
+#endif
 		#endregion
+
+		private void UserControl_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
+		{
+
+		}
 	}
 }

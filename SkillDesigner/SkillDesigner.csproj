@@ -3,11 +3,33 @@
   <PropertyGroup>
 	<OutputType>winexe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <UseWindowsForms>true</UseWindowsForms>
+	<UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="MainForm.cs" />
+    <Compile Remove="MainForm.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Background.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="MainForm.cs" />
+    <None Include="MainForm.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SkillDesigner.Libs\SkillDesigner.Libs.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Background.png" />
   </ItemGroup>
 
   <!--

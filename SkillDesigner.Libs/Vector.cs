@@ -1,5 +1,5 @@
 using System;
-using System.Drawing;
+using System.Windows;
 using System.Globalization;
 using System.Numerics;
 
@@ -557,14 +557,11 @@ namespace SkillDesigner.Libs
 		public static implicit operator Vector(Vector2 value) => new Vector(value.X, value.Y);
 
 		public static implicit operator Size(Vector value) => new Size((int)value.X, (int)value.Y);
-		public static implicit operator Vector(Size value) => new Vector(value.Width, value.Height);
+		public static implicit operator Vector(Size value) => new Vector((float)value.Width, (float)value.Height);
 
-		public static implicit operator SizeF(Vector value) => new SizeF(value.X, value.Y);
-		public static implicit operator Vector(SizeF value) => new Vector((int)value.Width, (int)value.Height);
 
-		public static implicit operator Point(Vector value) => new Point((int)value.X, (int)value.Y);
-		public static implicit operator PointF(Vector value) => new PointF(value.X, value.Y);
-		public static explicit operator Vector(PointF value) => new Vector(value.X, value.Y);
+		public static implicit operator Point(Vector value) => new Point(value.X, value.Y);
+		public static explicit operator Vector(Point value) => new Vector((float)value.X, (float)value.Y);
 
 	}
 }
