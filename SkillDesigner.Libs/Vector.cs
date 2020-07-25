@@ -81,6 +81,11 @@ namespace SkillDesigner.Libs
 			return $"({X:0.00},{Y:0.00})";
 		}
 
+		public string ToString(string format)
+		{
+			return X.ToString(format) + ", " + Y.ToString(format);
+		}
+
 		public Vector Deflect(double angle) => Vector.FromPolar(Angle + angle, PolarRadius);
 
 		public Vector ToLenOf(float len)

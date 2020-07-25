@@ -45,7 +45,6 @@ namespace SkillDesigner.Libs
 
 		private Bitmap xyAxis;
 		private Bitmap texture;
-		private Bitmap[] projTextures;
 
 		private Pen pen;
 		private SolidBrush brush;
@@ -66,6 +65,7 @@ namespace SkillDesigner.Libs
 
 			pen = new Pen(Color.FromArgb(255 / 3, Color.Blue));
 			brush = new SolidBrush(Color.Purple);
+
 
 			LoadBitmaps();
 			LoadViews();
@@ -248,6 +248,8 @@ namespace SkillDesigner.Libs
 		{
 			using var textureGraphics = Graphics.FromImage(texture);
 			textureGraphics.Clear(Color.FromArgb(0xA5, 255, 255));
+			// textureGraphics.DrawImage(Parent.BackgroundImage, 0, 0);
+			// textureGraphics.Clear(Color.FromArgb(80, 0xA5, 255, 255));
 			DrawProjViews(textureGraphics);
 			DrawXYAxis(textureGraphics);
 			DrawMouseAxis(textureGraphics);
@@ -313,6 +315,7 @@ namespace SkillDesigner.Libs
 
 		private void DrawProjViews(Graphics graphics)
 		{
+			brush.Color = Color.Purple;
 			foreach (var view in projViews)
 			{
 				view.Draw(graphics, this, brush);

@@ -31,7 +31,7 @@
 			components = new System.ComponentModel.Container();
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Size = new System.Drawing.Size(1000 - 320 * 2, 320);
-			this.BackColor = System.Drawing.Color.BlueViolet;
+			this.BackColor = System.Drawing.Color.Transparent;
 			this.Visible = true;
 		}
 

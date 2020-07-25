@@ -1,4 +1,6 @@
-﻿namespace SkillDesigner.Libs
+﻿using System.Drawing;
+
+namespace SkillDesigner.Libs
 {
 	partial class CoordinateSystem
 	{
@@ -21,6 +23,8 @@
 			{
 				xyAxis?.Dispose();
 				texture?.Dispose();
+				pen?.Dispose();
+				brush?.Dispose();
 				ProjView.ReleaseResources();
 			}
 			base.Dispose(disposing);
@@ -37,6 +41,7 @@
 			components = new System.ComponentModel.Container();
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Paint += CoordinateSystem_Paint;
+			this.BackColor = Color.Transparent;
 		}
 		#endregion
 	}

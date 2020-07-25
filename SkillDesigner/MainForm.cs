@@ -45,7 +45,7 @@ namespace SkillDesigner
             zoomDown.Location = new Point()
             {
                 X = CoordinateSystem.Width + (Width - CoordinateSystem.Width) / 2 * 3 / 2 - zoomDown.Width / 2,
-                Y = ClientSize.Height  - zoomDown.Height - 25
+                Y = ClientSize.Height - zoomDown.Height - 25
             };
             zoomDown.MouseClick += (sender, args) =>
             {
@@ -57,6 +57,7 @@ namespace SkillDesigner
             var hideHitbox = ControlCreator.CreateCheckBox();
             hideHitbox.Text = "隐藏碰撞箱";
             hideHitbox.CheckedChanged += (sender, args) => ProjView.HideHitbox = hideHitbox.Checked;
+            hideHitbox.BackColor = Color.Transparent;
             hideHitbox.Location = new Point()
             {
                 X = CoordinateSystem.Width + (Width - CoordinateSystem.Width) / 2 / 2 - zoomUp.Width / 2,
@@ -68,6 +69,7 @@ namespace SkillDesigner
             var hideTexture = ControlCreator.CreateCheckBox();
             hideTexture.Text = "隐藏贴图";
             hideTexture.CheckedChanged += (sender, args) => ProjView.HideTexture = hideTexture.Checked;
+            hideTexture.BackColor = Color.Transparent;
             hideTexture.Location = new Point()
             {
                 X = CoordinateSystem.Width + (Width - CoordinateSystem.Width) / 2 / 2 - zoomDown.Width / 2,
@@ -85,6 +87,7 @@ namespace SkillDesigner
             Load += LoadHandler;
             var screen = Screen.PrimaryScreen.WorkingArea;
             DesktopLocation = new Point(screen.Width / 2 - Width / 2, screen.Height / 2 - Height / 2);
+            // BackgroundImage = new Bitmap("Background.png");
             #endregion
         }
 
@@ -118,7 +121,6 @@ namespace SkillDesigner
                 else
 				{
                     CoordinateSystem.Transport(-Δ, 0);
-
                 }
             }
 		}
