@@ -12,35 +12,98 @@ using System.Windows.Media;
 using System.Windows.Input;
 using System.Windows;
 
+using WVector = System.Windows.Vector;
+
 namespace SkillDesigner.Libs
 {
-	public partial class CoordinateSystem : UserControl
+	public partial class CoordinateSystem : UserControl, INotifyPropertyChanged
 	{
-		public int LowX
+		public static int LowX
 		{
 			get;
 			private set;
 		}
-		public int LowY
+		public static int LowY
 		{
 			get;
 			private set;
 		}
-		public int HighX
+		public static int HighX
 		{
 			get;
 			private set;
 		}
-		public int HighY
+		public static int HighY
 		{
 			get;
 			private set;
 		}
-		public int PixelPerPoint
+		public static int PixelPerPoint
 		{
 			get;
 			private set;
 		}
+		#region MouseAxis
+		public double MouseAxisXX1
+		{
+			get => YAxis.X1;
+		}
+
+		public double MouseAxisXX2
+		{
+			get => Mouse.GetPosition(this).X;
+		}
+
+		public double MouseAxisXY
+		{
+			get => Mouse.GetPosition(this).Y;
+		}
+
+		public double MouseAxisYY1
+		{
+			get => XAxis.Y1;
+		}
+
+		public double MouseAxisYY2
+		{
+			get => Mouse.GetPosition(this).Y;
+		}
+
+		public double MouseAxisYX
+		{
+			get => Mouse.GetPosition(this).X;
+		}
+
+
+		public Thickness MouseAxisTextMargin
+		{
+			get
+			{
+				var pos = MouseAxisTextPosition;
+				return new Thickness(pos.X, pos.Y, 0, 0);
+			}
+		}
+
+		private Point MouseAxisTextPosition
+		{
+			get => Point.Subtract(Mouse.GetPosition(this), new WVector(MouseAxisTip.ActualWidth, MouseAxisTip.ActualHeight));
+		}
+
+		public string MouseAxisText
+		{
+			get => (ReversedTransform((Vector)Mouse.GetPosition(this)) / 16).ToString();
+		}
+
+		public Visibility MouseAxisVisibility
+		{
+			get => MouseAxisX.Visibility;
+			set => MouseAxisX.Visibility = MouseAxisY.Visibility = MouseAxisTip.Visibility = value;
+		}
+		#endregion
+		/// <summary>
+		/// 在像素坐标系中
+		/// </summary>
+		public Vector OriginalOffset { get; private set; }
 
 
 		// private List<ProjView> projViews;
@@ -51,6 +114,7 @@ namespace SkillDesigner.Libs
 
 		private List<Line> horLines;
 		private List<Line> verLines;
+		private List<ProjView> projs;
 
 
 		public CoordinateSystem()
@@ -58,6 +122,8 @@ namespace SkillDesigner.Libs
 			int lowX = -160; int lowY = -160; int highX = 160; int highY = 160; int pixelPerPoint = 2;
 
 			InitializeComponent();
+
+			ProjView.LoadResources();
 
 			LowX = lowX;
 			LowY = lowY;
@@ -68,13 +134,15 @@ namespace SkillDesigner.Libs
 			horLines = new List<Line>(gridLineCount);
 			verLines = new List<Line>(gridLineCount);
 
+			var unit = 16 * PixelPerPoint;
+
 			for (int i = 1; i <= gridLineCount / 2; i++)
 			{
-				horLines.Add(new Line() { Style = (Style)Resources["HorAxis"], Y1 = 320 + 16 * i, Y2 = 320 + 16 * i });
-				horLines.Add(new Line() { Style = (Style)Resources["HorAxis"], Y1 = 320 - 16 * i, Y2 = 320 - 16 * i });
+				horLines.Add(new Line() { Style = (Style)Resources["HorAxis"], Y1 = 320 + unit * i, Y2 = 320 + unit * i });
+				horLines.Add(new Line() { Style = (Style)Resources["HorAxis"], Y1 = 320 - unit * i, Y2 = 320 - unit * i });
 
-				verLines.Add(new Line() { Style = (Style)Resources["VerAxis"], X1 = 320 + 16 * i, X2 = 320 + 16 * i });
-				verLines.Add(new Line() { Style = (Style)Resources["VerAxis"], X1 = 320 - 16 * i, X2 = 320 - 16 * i });
+				verLines.Add(new Line() { Style = (Style)Resources["VerAxis"], X1 = 320 + unit * i, X2 = 320 + unit * i });
+				verLines.Add(new Line() { Style = (Style)Resources["VerAxis"], X1 = 320 - unit * i, X2 = 320 - unit * i });
 			}
 			foreach (var line in horLines)
 			{
@@ -85,7 +153,19 @@ namespace SkillDesigner.Libs
 				Grid.Children.Add(line);
 			}
 
+			Grid.Children.Remove(MouseAxisX);
+			Grid.Children.Remove(MouseAxisY);
+
+			Grid.Children.Add(MouseAxisX);
+			Grid.Children.Add(MouseAxisY);
+
 			Loaded += CoordinateSystem_Loaded;
+
+			projs = new List<ProjView>();
+
+			ProjView proj = new ProjView(new ProjData { ProjType = 636, Position = (64, 0) });
+			projs.Add(proj);
+			Grid.Children.Add(proj);
 
 			LoadBitmaps();
 			LoadViews();
@@ -139,7 +219,7 @@ namespace SkillDesigner.Libs
 		}
 		#endregion
 		#region Transform
-		public Vector Transform(Vector point)
+		public static Vector Transform(Vector point)
 		{
 			return Transform(point.X, point.Y);
 		}
@@ -147,7 +227,7 @@ namespace SkillDesigner.Libs
 		/// <summary>
 		/// 变换到像素坐标上
 		/// </summary>
-		public Vector Transform(float x, float y)
+		public static Vector Transform(float x, float y)
 		{
 			return new Vector
 			{
@@ -156,7 +236,12 @@ namespace SkillDesigner.Libs
 			};
 		}
 
-		public Vector ReversedTransform(float x, float y)
+		public static Vector ReversedTransform(Vector value)
+		{
+			return ReversedTransform(value.X, value.Y);
+		}
+
+		public static Vector ReversedTransform(float x, float y)
 		{
 			return new Vector
 			{
@@ -178,7 +263,7 @@ namespace SkillDesigner.Libs
 			HighX += Δx;
 			LowY += Δy;
 			HighY += Δy;
-			CoordinateSystemTransformed(Δx, Δy);
+			TransportGrid(Δx, Δy);
 		}
 
 		public void ZoomUp2()
@@ -200,8 +285,34 @@ namespace SkillDesigner.Libs
 
 			LowY = cy - height / 2;
 			HighY = cy + height / 2;
+			#region Modify
+			static void ModifyHor(Line line)
+			{
+				var y = line.Y1;
+				y = 320 + (y - 320) * 2;
+				line.Y1 = y;
+				line.Y2 = y;
+			}
+			static void ModifyVer(Line line)
+			{
+				var x = line.X1;
+				x = 320 + (x - 320) * 2;
+				line.X1 = x;
+				line.X2 = x;
+			}
+			#endregion
 
-			//CoordinateSystemTransformed();
+			foreach (var line in horLines)
+			{
+				ModifyHor(line);
+			}
+			foreach (var line in verLines)
+			{
+				ModifyVer(line);
+			}
+			ModifyHor(XAxis);
+			ModifyVer(YAxis);
+			Transformed();
 		}
 
 		public void ZoomDown2()
@@ -227,18 +338,53 @@ namespace SkillDesigner.Libs
 
 			LowY = cy - height / 2;
 			HighY = cy + height / 2;
+			#region Modify
+			static void ModifyHor(Line line)
+			{
+				var y = line.Y1;
+				y = 320 + (y - 320) / 2;
+				line.Y1 = y;
+				line.Y2 = y;
+			}
+			static void ModifyVer(Line line)
+			{
+				var x = line.X1;
+				x = 320 + (x - 320) / 2;
+				line.X1 = x;
+				line.X2 = x;
+			}
+			#endregion
 
-			//CoordinateSystemTransformed();
+			foreach (var line in horLines)
+			{
+				ModifyHor(line);
+			}
+			foreach (var line in verLines)
+			{
+				ModifyVer(line);
+			}
+			ModifyHor(XAxis);
+			ModifyVer(YAxis);
+			Transformed();
 		}
 
-		private void CoordinateSystemTransformed(int Δx, int Δy)
+		private void Transformed()
+		{
+			MouseAxisPropChanged();
+			foreach (var proj in projs)
+			{
+				proj.DataChanged(false);
+			}
+		}
+
+		private void TransportGrid(int Δx, int Δy)
 		{
 			void Modify(Line line)
 			{
-				line.X1 += Δx * PixelPerPoint;
-				line.Y1 -= Δy * PixelPerPoint;
-				line.X2 += Δx * PixelPerPoint;
-				line.Y2 -= Δy * PixelPerPoint;
+				line.X1 -= Δx * PixelPerPoint;
+				line.Y1 += Δy * PixelPerPoint;
+				line.X2 -= Δx * PixelPerPoint;
+				line.Y2 += Δy * PixelPerPoint;
 			}
 			foreach (var line in horLines)
 			{
@@ -250,23 +396,36 @@ namespace SkillDesigner.Libs
 			}
 			Modify(XAxis);
 			Modify(YAxis);
+			Transformed();
 		}
 		#endregion
 		#region Events
+		private void CSystem_MouseEnter(object sender, MouseEventArgs args)
+		{
+			MouseAxisVisibility = Visibility.Visible;
+		}
+		private void CSystem_MouseLeave(object sender, MouseEventArgs args)
+		{
+			MouseAxisVisibility = Visibility.Hidden;
+		}
+		private void CSystem_MouseMove(object sender, MouseEventArgs args)
+		{
+			MouseAxisPropChanged();
+		}
 
 		private void CoordinateSystem_MouseWheel(object sender, MouseWheelEventArgs args)
 		{
 			var pos = args.MouseDevice.GetPosition(this);
 			if (0 <= pos.X && pos.Y < Width && 0 <= pos.Y && pos.Y < Height)
 			{
-				var Δ = args.Delta / 120 * 16 / 2;
+				var Δ = args.Delta / 120 * 16;
 				if (!Keyboard.IsKeyDown(Key.LeftCtrl))
 				{
-					Transport(0, -Δ);
+					Transport(0, Δ);
 				}
 				else
 				{
-					Transport(-Δ, 0);
+					Transport(Δ, 0);
 				}
 			}
 		}
@@ -277,7 +436,24 @@ namespace SkillDesigner.Libs
 		}
 
 		#endregion
-
+		#region INotifyPropertyChanged
+		private void MouseAxisPropChanged()
+		{
+			TriggerPropertyChanged(nameof(MouseAxisXX1));
+			TriggerPropertyChanged(nameof(MouseAxisXX2));
+			TriggerPropertyChanged(nameof(MouseAxisXY));
+			TriggerPropertyChanged(nameof(MouseAxisYY1));
+			TriggerPropertyChanged(nameof(MouseAxisYY2));
+			TriggerPropertyChanged(nameof(MouseAxisYX));
+			TriggerPropertyChanged(nameof(MouseAxisText));
+			TriggerPropertyChanged(nameof(MouseAxisTextMargin));
+		}
+		private void TriggerPropertyChanged(string propName)
+		{
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
+		}
+		public event PropertyChangedEventHandler PropertyChanged;
+		#endregion
 		#region Draw
 #if false
 		[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.Synchronized)]
@@ -354,10 +530,5 @@ namespace SkillDesigner.Libs
 		}
 #endif
 		#endregion
-
-		private void UserControl_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
-		{
-
-		}
 	}
 }

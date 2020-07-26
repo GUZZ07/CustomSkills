@@ -1,49 +1,91 @@
-﻿<UserControl x:Class="SkillDesigner.Libs.CoordinateSystem"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:SkillDesigner.Libs"
-             mc:Ignorable="d" 
-             d:DesignHeight="640" d:DesignWidth="640" MouseWheel="CoordinateSystem_MouseWheel">
+             xmlns:System="clr-namespace:System;assembly=System.Runtime" xmlns:libs="clr-namespace:SkillDesigner.Libs" x:Class="SkillDesigner.Libs.CoordinateSystem"
+             mc:Ignorable="d"
+             d:DesignHeight="640" d:DesignWidth="640"
+			 MouseWheel="CoordinateSystem_MouseWheel" MouseMove="CSystem_MouseMove"
+			 MouseEnter="CSystem_MouseEnter" MouseLeave="CSystem_MouseLeave"
+			 x:Name="CS">
 	<UserControl.Resources>
-		<Style x:Key="HorAxis" TargetType="Line">
-			<Style.Setters>
-				<Setter Property="Stroke" Value="#A80000FF"/>
-				<Setter Property="StrokeThickness" Value="0.75"/>
-				<Setter Property="X1" Value="-30000"></Setter>
-				<Setter Property="X2" Value="30000"></Setter>
-			</Style.Setters>
+		<Style x:Key="HorAxis" TargetType="{x:Type Line}">
+			<Setter Property="Stroke" Value="#A80000FF"/>
+			<Setter Property="StrokeThickness" Value="0.75"/>
+			<Setter Property="X1" Value="-30000"/>
+			<Setter Property="X2" Value="30000"/>
 		</Style>
-		<Style x:Key="VerAxis" TargetType="Line">
-			<Style.Setters>
-				<Setter Property="Stroke" Value="#A80000FF"/>
-				<Setter Property="StrokeThickness" Value="0.75"/>
-				<Setter Property="Y1" Value="-30000"></Setter>
-				<Setter Property="Y2" Value="30000"></Setter>
-			</Style.Setters>
+		<Style x:Key="VerAxis" TargetType="{x:Type Line}">
+			<Setter Property="Stroke" Value="#A80000FF"/>
+			<Setter Property="StrokeThickness" Value="0.75"/>
+			<Setter Property="Y1" Value="-30000"/>
+			<Setter Property="Y2" Value="30000"/>
 		</Style>
 	</UserControl.Resources>
-	<Grid Background="#A8B4FFFF" x:Name="Grid">
+	<Grid Background="#60A8FFFF" x:Name="Grid">
+		<Line x:Name="MouseAxisX"  Style="{StaticResource HorAxis}"
+			  X1="{Binding MouseAxisXX1}" X2="{Binding MouseAxisXX2}"
+			  Y1="{Binding MouseAxisXY}"  Y2="{Binding MouseAxisXY}"
+			  DataContext="{Binding ElementName=CS, Mode=OneWay}" Stroke="Red" StrokeThickness="2"
+			  />
+		<Line x:Name="MouseAxisY"  Style="{StaticResource VerAxis}"
+			  X1="{Binding MouseAxisYX}"  X2="{Binding MouseAxisYX}"
+			  Y1="{Binding MouseAxisYY1}"  Y2="{Binding MouseAxisYY2}"
+			  DataContext="{Binding ElementName=CS, Mode=OneWay}" Stroke="Red" StrokeThickness="2"
+			  />
 		<Line x:Name="XAxis">
-			<Line.Stroke>Blue</Line.Stroke>
-			<Line.StrokeThickness>1.5</Line.StrokeThickness>
-			<Line.X1>-30000</Line.X1>
-			<Line.Y1>320</Line.Y1>
-			<Line.X2>30000</Line.X2>
-			<Line.Y2>320</Line.Y2>
+			<Line.Stroke>
+				<Brush>Blue</Brush>
+			</Line.Stroke>
+			<Line.StrokeThickness>
+				<System:Double>1.5</System:Double>
+			</Line.StrokeThickness>
+			<Line.X1>
+				<System:Double>-30000</System:Double>
+			</Line.X1>
+			<Line.Y1>
+				<System:Double>320</System:Double>
+			</Line.Y1>
+			<Line.X2>
+				<System:Double>30000</System:Double>
+			</Line.X2>
+			<Line.Y2>
+				<System:Double>320</System:Double>
+			</Line.Y2>
 		</Line>
 		<Line x:Name="YAxis">
-			<Line.Stroke>Blue</Line.Stroke>
-			<Line.StrokeThickness>1.5</Line.StrokeThickness>
-			<Line.X1>320</Line.X1>
-			<Line.Y1>-30000</Line.Y1>
-			<Line.X2>320</Line.X2>
-			<Line.Y2>30000</Line.Y2>
+			<Line.Stroke>
+				<Brush>Blue</Brush>
+			</Line.Stroke>
+			<Line.StrokeThickness>
+				<System:Double>1.5</System:Double>
+			</Line.StrokeThickness>
+			<Line.X1>
+				<System:Double>320</System:Double>
+			</Line.X1>
+			<Line.Y1>
+				<System:Double>-30000</System:Double>
+			</Line.Y1>
+			<Line.X2>
+				<System:Double>320</System:Double>
+			</Line.X2>
+			<Line.Y2>
+				<System:Double>30000</System:Double>
+			</Line.Y2>
 		</Line>
 		<Rectangle>
-			<Rectangle.Stroke>Yellow</Rectangle.Stroke>
-			<Rectangle.StrokeThickness>1</Rectangle.StrokeThickness>
+			<Rectangle.Stroke>
+				<Brush>Yellow</Brush>
+			</Rectangle.Stroke>
+			<Rectangle.StrokeThickness>
+				<System:Double>1</System:Double>
+			</Rectangle.StrokeThickness>
 		</Rectangle>
+		<Label x:Name="MouseAxisTip" Content="{Binding MouseAxisText}" Margin="{Binding MouseAxisTextMargin}" DataContext="{Binding ElementName=CS}">
+			<Label.HorizontalAlignment>Left</Label.HorizontalAlignment>
+			<Label.VerticalAlignment>Top</Label.VerticalAlignment>
+			<Label.FontSize>14</Label.FontSize>
+		</Label>
 	</Grid>
 </UserControl>

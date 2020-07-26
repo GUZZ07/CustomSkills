@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using System.IO;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
-#if false
+using Newtonsoft.Json;
+using System.Windows.Media.Imaging;
+using System.Reflection.Metadata;
+
 namespace SkillDesigner.Libs
 {
-	public class ProjView
+	public partial class ProjView : UserControl, INotifyPropertyChanged
 	{
 		private struct ProjViewData
 		{
@@ -36,10 +39,20 @@ namespace SkillDesigner.Libs
 			set;
 		}
 
+		public static bool LoadedResource
+		{
+			get;
+			private set;
+		}
+
 		public static void LoadResources()
 		{
+			if (LoadedResource)
+			{
+				return;
+			}
 			Textures = new TextureManager("Projs", 950);
-			ProjViewDatas = JsonConvert.DeserializeObject<ProjViewData[]>(File.ReadAllText("PDatas.json"));
+			ProjViewDatas = JsonConvert.DeserializeObject<ProjViewData[]>(Resource.PDatas);
 
 			ProjViewDatas[48].SpecialHeight = true;
 			ProjViewDatas[636].SpecialHeight = true;
@@ -90,6 +103,7 @@ namespace SkillDesigner.Libs
 			OverrideSize(4, 4, 304);
 			OverrideSize(4, 4, 931);
 			#endregion
+			LoadedResource = true;
 		}
 		public static void ReleaseResources()
 		{
@@ -98,25 +112,119 @@ namespace SkillDesigner.Libs
 
 		private int frame;
 		private int t;
+		private ProjData projData;
 
-		public ProjData Data { get; }
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		public ProjData Data
+		{
+			get => projData;
+			set => SetData(value);
+		}
 		public Vector ProjSize => ProjViewDatas[Data.ProjType].Size;
+		public ImageBrush Texture
+		{
+			get
+			{
+				if (Data == null)
+				{
+					return null;
+				}
+				var brush = new ImageBrush(Textures[Data.ProjType]);
+				var viewbox = new Rect();
+				viewbox.Height = 1;
+				viewbox.Width = 1 / TextureData.Frames;
+				viewbox.Y = 1 / TextureData.Frames * frame;
+
+				brush.Viewbox = viewbox;
+				return brush;
+			}
+		}
+		public double TextureWidth
+		{
+			get => Data is null ? 0 : Textures[Data.ProjType].PixelWidth;
+		}
+		public double TextureHeight
+		{
+			get => Data is null ? 0 : Textures[Data.ProjType].PixelHeight / TextureData.Frames;
+		}
+		public Transform ProjTransform
+		{
+			get
+			{
+				var matrix = Matrix.Identity;
+				if (Data == null)
+				{
+					return new MatrixTransform(matrix);
+				}
+				if (!TextureData.NoRotation)
+				{
+					matrix.RotateAt(-TextureData.SpriteRotation * 180 / Math.PI, 0.5, 0.5);
+					matrix.RotateAt(-Data.SpeedAngle * 180 / Math.PI, 0.5, 0.5);
+					matrix.ScaleAt(CoordinateSystem.PixelPerPoint, CoordinateSystem.PixelPerPoint, 0.5, 0.5);
+				}
+				return new MatrixTransform(matrix);
+			}
+		}
+		public Thickness ProjMargin
+		{
+			get
+			{
+				if (Data == null)
+				{
+					return default;
+				}
+				var size = ProjSize / 2; ;
+				size.Y *= -1;
+				var pos = Data.Position - size;
+				pos = CoordinateSystem.Transform(pos);
+				return new Thickness(pos.X, pos.Y, 0, 0);
+			}
+		}
 		private ProjViewData TextureData => ProjViewDatas[Data.ProjType];
-		public bool NoRotation { get; set; }
+
+		public bool NoRotation
+		{
+			get;
+			set;
+		}
+
+		public ProjView() : this(null)
+		{
+		}
 		public ProjView(ProjData data)
 		{
-			Data = data;PolyLineSegment pls = new PolyLineSegment();
+			InitializeComponent();
+			LoadResources();
+			Data = data;
+			VerticalAlignment = VerticalAlignment.Top;
+			HorizontalAlignment = HorizontalAlignment.Left;
 		}
 
-		public RectangleF GetRect(CoordinateSystem coordinateSystem)
+		public void DataChanged(bool changeProjType)
 		{
-			var pos = coordinateSystem.Transform(Data.Position);
-			var size = coordinateSystem.PixelPerPoint * ProjSize;
-
-			pos -= size / 2;
-			return new RectangleF(pos, size);
+			var handler = PropertyChanged;
+			if (handler != null)
+			{
+				handler(this, new PropertyChangedEventArgs(nameof(ProjTransform)));
+				handler(this, new PropertyChangedEventArgs(nameof(ProjMargin)));
+				handler(this, new PropertyChangedEventArgs(nameof(TextureWidth)));
+				handler(this, new PropertyChangedEventArgs(nameof(TextureHeight)));
+				if (changeProjType)
+				{
+					handler(this, new PropertyChangedEventArgs(nameof(Texture)));
+				}
+			}
+		}
+		public void SetData(ProjData data)
+		{
+			var oldData = projData;
+			projData = data;
+			DataChanged(oldData?.ProjType != data.ProjType);
 		}
 
+
+#if false
 		public void Draw(Graphics graphics, CoordinateSystem coordinateSystem, Brush brush = null)
 		{
 			t++;
@@ -135,13 +243,13 @@ namespace SkillDesigner.Libs
 				matrix.RotateAt(-Data.SpeedAngle / MathF.PI * 180, coordinateSystem.Transform(Data.Position));
 				graphics.Transform = matrix;
 			}
-			#region DrawHitbox
+#region DrawHitbox
 			if (!HideHitbox)
 			{
 				graphics.FillRectangle(brush, GetRect(coordinateSystem));
 			}
-			#endregion
-			#region DrawTexture
+#endregion
+#region DrawTexture
 			if (!HideTexture)
 			{
 				var pos = coordinateSystem.Transform(Data.Position) - new Vector(texture.Width, TextureData.SpecialHeight ? ProjSize.Y : texture.Height / TextureData.Frames) * ppp / 2f;
@@ -153,13 +261,13 @@ namespace SkillDesigner.Libs
 				var destRect = new RectangleF(pos, srcRect.Size * ppp);
 				graphics.DrawImage(texture, destRect, srcRect, GraphicsUnit.Pixel);
 			}
-			#endregion
+#endregion
 			graphics.ResetTransform();
 			if (!NoRotation)
 			{
 				Data.SpeedAngle += MathF.PI / 180;
 			}
 		}
+#endif
 	}
 }
-#endif

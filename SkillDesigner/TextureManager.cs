@@ -11,12 +11,13 @@ namespace SkillDesigner.Libs
 	public class TextureManager : IDisposable
 	{
 		private string directory;
-		private ImageDrawing[] textures;
+		private BitmapImage[] textures;
+		private ImageSourceConverter converter;
 		public int Count
 		{
 			get => textures.Length;
 		}
-		public ImageDrawing this[int i]
+		public BitmapImage this[int i]
 		{
 			get
 			{
@@ -29,13 +30,13 @@ namespace SkillDesigner.Libs
 		}
 		public TextureManager(string path, int count)
 		{
-			textures = new ImageDrawing[count];
+			textures = new BitmapImage[count];
+			converter = new ImageSourceConverter();
 			directory = path;
 		}
 		private void LoadProj(int i)
 		{
-			var bmp = new BitmapImage(new Uri(Path.Combine(directory, i + ".png"), UriKind.Relative));
-			textures[i] = new ImageDrawing(bmp, new Rect(0, 0, bmp.PixelWidth, bmp.PixelHeight));
+			textures[i] = new BitmapImage(new Uri(Path.Combine(directory, i.ToString() + ".png"), UriKind.Relative));
 		}
 
 		public void Dispose()

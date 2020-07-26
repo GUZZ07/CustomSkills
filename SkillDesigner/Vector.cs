@@ -78,7 +78,7 @@ namespace SkillDesigner.Libs
 
 		public override string ToString()
 		{
-			return $"({X:0.00},{Y:0.00})";
+			return $"({X:0.00},{(Y < 0 ? "" : " ")}{Y:0.00})";
 		}
 
 		public string ToString(string format)

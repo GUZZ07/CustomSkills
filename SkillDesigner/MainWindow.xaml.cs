@@ -36,5 +36,15 @@ namespace SkillDesigner
 			//var bmp = new BitmapImage(new Uri("Background.png", UriKind.Relative));
 			//image = new ImageDrawing(bmp, new Rect(0, 0, bmp.PixelWidth, bmp.PixelHeight));
 		}
+
+		private void ZoomUp_Click(object sender, RoutedEventArgs args)
+		{
+			CSystem.ZoomUp2();
+		}
+
+		private void ZoomDown_Click(object sender, RoutedEventArgs args)
+		{
+			CSystem.ZoomDown2();
+		}
 	}
 }
