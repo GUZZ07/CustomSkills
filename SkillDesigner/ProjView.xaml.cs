@@ -145,23 +145,11 @@ namespace SkillDesigner.Libs
 
 		public double HitboxWidth
 		{
-			get => Data is null ? TextureData.Size.X : 0;
+			get => Data != null ? TextureData.Size.X : 0;
 		}
 		public double HitboxHeight
 		{
-			get => Data is null ? TextureData.Size.Y : 0;
-		}
-		public Thickness HitboxMargin
-		{
-			get
-			{
-				if (Data == null)
-				{
-					return default;
-				}
-				var pos = CoordinateSystem.Transform(Data.Position);
-				return new Thickness(pos.X, pos.Y, 0, 0);
-			}
+			get => Data != null ? TextureData.Size.Y : 0;
 		}
 
 		public double TextureWidth
@@ -181,6 +169,10 @@ namespace SkillDesigner.Libs
 					return default;
 				}
 				var offset = new Vector(TextureWidth, TextureHeight) / 2;
+				if (TextureData.SpecialHeight)
+				{
+					offset.Y += (float)(TextureHeight - TextureData.Size.Y) / 2;
+				}
 				offset.Angle += (TextureData.SpriteRotation + Data.SpeedAngle);
 				var pos = CoordinateSystem.Transform(Data.Position - offset);
 				return new Thickness(pos.X, pos.Y, 0, 0);
@@ -235,12 +227,22 @@ namespace SkillDesigner.Libs
 				handler(this, new PropertyChangedEventArgs(nameof(ProjMargin)));
 				if (changeProjType)
 				{
-					handler(this, new PropertyChangedEventArgs(nameof(HitboxWidth)));
-					handler(this, new PropertyChangedEventArgs(nameof(HitboxHeight)));
-
 					handler(this, new PropertyChangedEventArgs(nameof(TextureWidth)));
 					handler(this, new PropertyChangedEventArgs(nameof(TextureHeight)));
 					handler(this, new PropertyChangedEventArgs(nameof(Texture)));
+					Vector origin;
+					if (TextureData.SpecialHeight)
+					{
+						origin = (0.5, 1 - (TextureData.Size.Y / TextureHeight) / 2);
+					}
+					else
+					{
+						origin = (0.5, 0.5);
+					}
+					RenderTransformOrigin = origin;
+					Hitbox.Width = HitboxWidth;
+					Hitbox.Height = HitboxHeight;
+					Hitbox.Margin = new Thickness(TextureWidth / 2 - HitboxWidth / 2, 0, 0, 0);
 				}
 			}
 		}

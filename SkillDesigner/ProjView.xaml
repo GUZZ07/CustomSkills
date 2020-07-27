@@ -14,9 +14,13 @@
 			Background="{Binding Texture}"
 			LayoutTransform="{Binding ProjTransform}"
 			RenderTransformOrigin="0.5,0.5"
+			BorderBrush="Yellow"
+			BorderThickness="0.25,0.25,0.25,0.25"
 	>
 	<Rectangle x:Name="Hitbox"
 					Stroke="Red"
 					StrokeThickness="0.5"
+					HorizontalAlignment="Left"
+					VerticalAlignment="Top"
 				   />
 </UserControl>
