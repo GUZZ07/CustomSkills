@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Reflection.Metadata;
 
 using WVector = System.Windows.Vector;
+using System.Windows.Input;
 
 namespace SkillDesigner.Libs
 {
@@ -115,6 +116,9 @@ namespace SkillDesigner.Libs
 		private int frame;
 		private int t;
 		private ProjData projData;
+		private bool mouseDown;
+		private Vector? mouseDownPos;
+		private Vector? mouseDownPosSelf;
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
@@ -122,6 +126,10 @@ namespace SkillDesigner.Libs
 		{
 			get => projData;
 			set => SetData(value);
+		}
+		public CoordinateSystem CSystem
+		{
+			get => (CoordinateSystem)((Control)Parent).Parent;
 		}
 		public Vector ProjSize => ProjViewDatas[Data.ProjType].Size;
 		public ImageBrush Texture
@@ -252,6 +260,30 @@ namespace SkillDesigner.Libs
 			projData = data;
 			DataChanged(oldData?.ProjType != data.ProjType);
 		}
+		#region Events
+		public void PView_MouseMoveEx(object sender, Vector mousePos)
+		{
+			if (mouseDown)
+			{
+				var delta = mousePos - (Vector)mouseDownPos;
+				delta.Y *= -1;
+				Data.Position = (Vector)mouseDownPosSelf + delta / CoordinateSystem.PixelPerPoint;
+				DataChanged(false);
+			}
+		}
+		private void PView_MouseDown(object sender, MouseEventArgs args)
+		{
+			mouseDown = true;
+			mouseDownPos = (Vector)args.GetPosition((IInputElement)Parent);
+			mouseDownPosSelf = Data.Position;
+		}
+		private void PView_MouseUp(object sender, EventArgs args)
+		{
+			mouseDown = false;
+			mouseDownPos = null;
+			mouseDownPosSelf = null;
+		}
+		#endregion
 
 
 #if false
@@ -273,13 +305,14 @@ namespace SkillDesigner.Libs
 				matrix.RotateAt(-Data.SpeedAngle / MathF.PI * 180, coordinateSystem.Transform(Data.Position));
 				graphics.Transform = matrix;
 			}
-#region DrawHitbox
+		#region DrawHitbox
 			if (!HideHitbox)
 			{
 				graphics.FillRectangle(brush, GetRect(coordinateSystem));
 			}
-#endregion
-#region DrawTexture
+		#endregion
+
+		#region DrawTexture
 			if (!HideTexture)
 			{
 				var pos = coordinateSystem.Transform(Data.Position) - new Vector(texture.Width, TextureData.SpecialHeight ? ProjSize.Y : texture.Height / TextureData.Frames) * ppp / 2f;
@@ -291,7 +324,7 @@ namespace SkillDesigner.Libs
 				var destRect = new RectangleF(pos, srcRect.Size * ppp);
 				graphics.DrawImage(texture, destRect, srcRect, GraphicsUnit.Pixel);
 			}
-#endregion
+		#endregion
 			graphics.ResetTransform();
 			if (!NoRotation)
 			{

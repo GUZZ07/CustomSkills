@@ -116,6 +116,16 @@ namespace SkillDesigner.Libs
 		private List<Line> verLines;
 		private List<ProjView> projs;
 
+		private bool mouseDown;
+		private Vector? mouseDownPos;
+		private Vector? mouseDownPosSelf;
+
+		public ProjView FocusedView
+		{
+			get;
+			private set;
+		}
+
 
 		public CoordinateSystem()
 		{
@@ -131,6 +141,22 @@ namespace SkillDesigner.Libs
 			HighY = highY;
 			PixelPerPoint = pixelPerPoint;
 
+			Loaded += CoordinateSystem_Loaded;
+
+			LoadGrid();
+
+			projs = new List<ProjView>();
+
+			ProjView proj = new ProjView(new ProjData { ProjType = 636, Position = (64, 0) });
+			projs.Add(proj);
+			Grid.Children.Add(proj);
+
+			LoadBitmaps();
+			LoadViews();
+		}
+		#region Loads
+		private void LoadGrid()
+		{
 			horLines = new List<Line>(gridLineCount);
 			verLines = new List<Line>(gridLineCount);
 
@@ -158,19 +184,7 @@ namespace SkillDesigner.Libs
 
 			Grid.Children.Add(MouseAxisX);
 			Grid.Children.Add(MouseAxisY);
-
-			Loaded += CoordinateSystem_Loaded;
-
-			projs = new List<ProjView>();
-
-			ProjView proj = new ProjView(new ProjData { ProjType = 636, Position = (64, 0) });
-			projs.Add(proj);
-			Grid.Children.Add(proj);
-
-			LoadBitmaps();
-			LoadViews();
 		}
-		#region Loads
 		private void LoadBitmaps()
 		{
 
@@ -411,6 +425,11 @@ namespace SkillDesigner.Libs
 		private void CSystem_MouseMove(object sender, MouseEventArgs args)
 		{
 			MouseAxisPropChanged();
+			var pos = (Vector)args.GetPosition(this);
+			foreach(var view in projs)
+			{
+				view.PView_MouseMoveEx(sender, pos);
+			}
 		}
 
 		private void CoordinateSystem_MouseWheel(object sender, MouseWheelEventArgs args)

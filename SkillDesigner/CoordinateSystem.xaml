@@ -12,13 +12,13 @@
 	<UserControl.Resources>
 		<Style x:Key="HorAxis" TargetType="{x:Type Line}">
 			<Setter Property="Stroke" Value="#A80000FF"/>
-			<Setter Property="StrokeThickness" Value="0.75"/>
+			<Setter Property="StrokeThickness" Value="0.5"/>
 			<Setter Property="X1" Value="-30000"/>
 			<Setter Property="X2" Value="30000"/>
 		</Style>
 		<Style x:Key="VerAxis" TargetType="{x:Type Line}">
 			<Setter Property="Stroke" Value="#A80000FF"/>
-			<Setter Property="StrokeThickness" Value="0.75"/>
+			<Setter Property="StrokeThickness" Value="0.5"/>
 			<Setter Property="Y1" Value="-30000"/>
 			<Setter Property="Y2" Value="30000"/>
 		</Style>
@@ -35,52 +35,24 @@
 			  DataContext="{Binding ElementName=CS, Mode=OneWay}" Stroke="Red" StrokeThickness="2"
 			  />
 		<Line x:Name="XAxis">
-			<Line.Stroke>
-				<Brush>Blue</Brush>
-			</Line.Stroke>
-			<Line.StrokeThickness>
-				<System:Double>1.5</System:Double>
-			</Line.StrokeThickness>
-			<Line.X1>
-				<System:Double>-30000</System:Double>
-			</Line.X1>
-			<Line.Y1>
-				<System:Double>320</System:Double>
-			</Line.Y1>
-			<Line.X2>
-				<System:Double>30000</System:Double>
-			</Line.X2>
-			<Line.Y2>
-				<System:Double>320</System:Double>
-			</Line.Y2>
+			<Line.Stroke>Blue</Line.Stroke>
+			<Line.StrokeThickness>1.5</Line.StrokeThickness>
+			<Line.X1>-30000</Line.X1>
+			<Line.Y1>320</Line.Y1>
+			<Line.X2>30000</Line.X2>
+			<Line.Y2>320</Line.Y2>
 		</Line>
 		<Line x:Name="YAxis">
-			<Line.Stroke>
-				<Brush>Blue</Brush>
-			</Line.Stroke>
-			<Line.StrokeThickness>
-				<System:Double>1.5</System:Double>
-			</Line.StrokeThickness>
-			<Line.X1>
-				<System:Double>320</System:Double>
-			</Line.X1>
-			<Line.Y1>
-				<System:Double>-30000</System:Double>
-			</Line.Y1>
-			<Line.X2>
-				<System:Double>320</System:Double>
-			</Line.X2>
-			<Line.Y2>
-				<System:Double>30000</System:Double>
-			</Line.Y2>
+			<Line.Stroke>Blue</Line.Stroke>
+			<Line.StrokeThickness>1.5</Line.StrokeThickness>
+			<Line.X1>320</Line.X1>
+			<Line.Y1>-30000</Line.Y1>
+			<Line.X2>320</Line.X2>
+			<Line.Y2>30000</Line.Y2>
 		</Line>
 		<Rectangle>
-			<Rectangle.Stroke>
-				<Brush>Yellow</Brush>
-			</Rectangle.Stroke>
-			<Rectangle.StrokeThickness>
-				<System:Double>1</System:Double>
-			</Rectangle.StrokeThickness>
+			<Rectangle.Stroke>Yellow</Rectangle.Stroke>
+			<Rectangle.StrokeThickness>1</Rectangle.StrokeThickness>
 		</Rectangle>
 		<Label x:Name="MouseAxisTip" Content="{Binding MouseAxisText}" Margin="{Binding MouseAxisTextMargin}" DataContext="{Binding ElementName=CS}">
 			<Label.HorizontalAlignment>Left</Label.HorizontalAlignment>

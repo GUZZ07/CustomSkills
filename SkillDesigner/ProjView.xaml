@@ -14,12 +14,14 @@
 			Background="{Binding Texture}"
 			LayoutTransform="{Binding ProjTransform}"
 			RenderTransformOrigin="0.5,0.5"
-			BorderBrush="Yellow"
-			BorderThickness="0.25,0.25,0.25,0.25"
+			BorderBrush="Red"
+			BorderThickness="1,1,1,1"
+			MouseDown="PView_MouseDown"
+			MouseUp="PView_MouseUp"
 	>
 	<Rectangle x:Name="Hitbox"
-					Stroke="Red"
-					StrokeThickness="0.5"
+					Stroke="Yellow"
+					StrokeThickness="0.75"
 					HorizontalAlignment="Left"
 					VerticalAlignment="Top"
 				   />
