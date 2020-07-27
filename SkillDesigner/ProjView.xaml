@@ -8,10 +8,15 @@
              mc:Ignorable="d"
 	        x:Name="PView"
 	        DataContext="{Binding ElementName=PView}"
-	        Background="{Binding Texture}"
-	        Width="{Binding TextureWidth}"
-	        Height="{Binding TextureHeight}"
-			RenderTransform="{Binding ProjTransform}"
 			Margin="{Binding ProjMargin}"
+			Width="{Binding TextureWidth}"
+			Height="{Binding TextureHeight}"
+			Background="{Binding Texture}"
+			LayoutTransform="{Binding ProjTransform}"
+			RenderTransformOrigin="0.5,0.5"
 	>
+	<Rectangle x:Name="Hitbox"
+					Stroke="Red"
+					StrokeThickness="0.5"
+				   />
 </UserControl>

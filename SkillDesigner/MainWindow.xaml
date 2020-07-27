@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SkillDesigner" xmlns:libs="clr-namespace:SkillDesigner.Libs;assembly=SkillDesigner.Libs" xmlns:Libs="clr-namespace:SkillDesigner.Libs"
 		mc:Ignorable="d"
-        Title="SkillDesigner" Height="678" Width="1008" MaxHeight="678"
+        Title="SkillDesigner" Height="678" Width="1008" MaxHeight="678" MinHeight="678"
 		WindowStyle="SingleBorderWindow"
 		>
 	<Window.Resources>

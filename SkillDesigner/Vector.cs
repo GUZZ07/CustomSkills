@@ -29,6 +29,11 @@ namespace SkillDesigner.Libs
 
 		public static Vector UnitY => _unitY;
 
+		public Vector(double x, double y) : this((float)x, (float)y)
+		{
+
+		}
+
 		public Vector(float x, float y)
 		{
 			X = x;

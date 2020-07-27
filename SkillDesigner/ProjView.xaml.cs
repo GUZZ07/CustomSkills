@@ -13,6 +13,8 @@ using Newtonsoft.Json;
 using System.Windows.Media.Imaging;
 using System.Reflection.Metadata;
 
+using WVector = System.Windows.Vector;
+
 namespace SkillDesigner.Libs
 {
 	public partial class ProjView : UserControl, INotifyPropertyChanged
@@ -140,6 +142,28 @@ namespace SkillDesigner.Libs
 				return brush;
 			}
 		}
+
+		public double HitboxWidth
+		{
+			get => Data is null ? TextureData.Size.X : 0;
+		}
+		public double HitboxHeight
+		{
+			get => Data is null ? TextureData.Size.Y : 0;
+		}
+		public Thickness HitboxMargin
+		{
+			get
+			{
+				if (Data == null)
+				{
+					return default;
+				}
+				var pos = CoordinateSystem.Transform(Data.Position);
+				return new Thickness(pos.X, pos.Y, 0, 0);
+			}
+		}
+
 		public double TextureWidth
 		{
 			get => Data is null ? 0 : Textures[Data.ProjType].PixelWidth;
@@ -148,6 +172,21 @@ namespace SkillDesigner.Libs
 		{
 			get => Data is null ? 0 : Textures[Data.ProjType].PixelHeight / TextureData.Frames;
 		}
+		public Thickness ProjMargin
+		{
+			get
+			{
+				if (Data == null)
+				{
+					return default;
+				}
+				var offset = new Vector(TextureWidth, TextureHeight) / 2;
+				offset.Angle += (TextureData.SpriteRotation + Data.SpeedAngle);
+				var pos = CoordinateSystem.Transform(Data.Position - offset);
+				return new Thickness(pos.X, pos.Y, 0, 0);
+			}
+		}
+
 		public Transform ProjTransform
 		{
 			get
@@ -159,26 +198,11 @@ namespace SkillDesigner.Libs
 				}
 				if (!TextureData.NoRotation)
 				{
-					matrix.RotateAt(-TextureData.SpriteRotation * 180 / Math.PI, 0.5, 0.5);
-					matrix.RotateAt(-Data.SpeedAngle * 180 / Math.PI, 0.5, 0.5);
-					matrix.ScaleAt(CoordinateSystem.PixelPerPoint, CoordinateSystem.PixelPerPoint, 0.5, 0.5);
+					matrix.RotateAt(-TextureData.SpriteRotation * 180 / Math.PI, 0, 0);
+					matrix.RotateAt(-Data.SpeedAngle * 180 / Math.PI, 0, 0);
 				}
+				matrix.ScaleAt(CoordinateSystem.PixelPerPoint, CoordinateSystem.PixelPerPoint, 0, 0);
 				return new MatrixTransform(matrix);
-			}
-		}
-		public Thickness ProjMargin
-		{
-			get
-			{
-				if (Data == null)
-				{
-					return default;
-				}
-				var size = ProjSize / 2; ;
-				size.Y *= -1;
-				var pos = Data.Position - size;
-				pos = CoordinateSystem.Transform(pos);
-				return new Thickness(pos.X, pos.Y, 0, 0);
 			}
 		}
 		private ProjViewData TextureData => ProjViewDatas[Data.ProjType];
@@ -191,6 +215,7 @@ namespace SkillDesigner.Libs
 
 		public ProjView() : this(null)
 		{
+
 		}
 		public ProjView(ProjData data)
 		{
@@ -208,10 +233,13 @@ namespace SkillDesigner.Libs
 			{
 				handler(this, new PropertyChangedEventArgs(nameof(ProjTransform)));
 				handler(this, new PropertyChangedEventArgs(nameof(ProjMargin)));
-				handler(this, new PropertyChangedEventArgs(nameof(TextureWidth)));
-				handler(this, new PropertyChangedEventArgs(nameof(TextureHeight)));
 				if (changeProjType)
 				{
+					handler(this, new PropertyChangedEventArgs(nameof(HitboxWidth)));
+					handler(this, new PropertyChangedEventArgs(nameof(HitboxHeight)));
+
+					handler(this, new PropertyChangedEventArgs(nameof(TextureWidth)));
+					handler(this, new PropertyChangedEventArgs(nameof(TextureHeight)));
 					handler(this, new PropertyChangedEventArgs(nameof(Texture)));
 				}
 			}
