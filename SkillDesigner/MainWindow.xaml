@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SkillDesigner" xmlns:libs="clr-namespace:SkillDesigner.Libs;assembly=SkillDesigner.Libs" xmlns:Libs="clr-namespace:SkillDesigner.Libs"
 		mc:Ignorable="d"
-        Title="SkillDesigner" Height="678" Width="1008" MaxHeight="678" MinHeight="678"
+        Title="SkillDesigner" Height="678" Width="1016" MinHeight="678" MinWidth="1016" 
 		WindowStyle="SingleBorderWindow"
 		>
 	<Window.Resources>
@@ -43,20 +43,24 @@
 	</Window.Background>
 	<Grid x:Name="Grid">
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="640"></ColumnDefinition>
+			<ColumnDefinition Width="640"/>
 			<ColumnDefinition Width="0"/>
-			<ColumnDefinition Width="360"/>
+			<ColumnDefinition Width="360*"/>
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="640"></RowDefinition>
 		</Grid.RowDefinitions>
 		<Libs:CoordinateSystem x:Name="CSystem"
 				Width="640" Height="640" Grid.ColumnSpan="2"/>
-		<Button x:Name="ZoomUp" Margin="45,576,227,20" Grid.Column="1" Style="{StaticResource ZoomButton}" Click="ZoomUp_Click" Grid.ColumnSpan="2" Width="Auto">
+		<Button x:Name="ZoomUp" Margin="45,576,227,20" Grid.Column="2"  Style="{StaticResource ZoomButton}" Click="ZoomUp_Click" Width="88" HorizontalAlignment="Stretch" Grid.ColumnSpan="1">
 			<Button.Content>+</Button.Content>
 		</Button>
-		<Button x:Name="ZoomDown" Margin="227,576,45,20" Grid.Column="2" Style="{StaticResource ZoomButton}" Click="ZoomDown_Click" Width="Auto">
+		<Button x:Name="ZoomDown" Margin="227,576,45,20" Grid.Column="2" Style="{StaticResource ZoomButton}" Click="ZoomDown_Click" Width="88">
 			<Button.Content>-</Button.Content>
 		</Button>
+		<StackPanel x:Name="PropertyViewer" Margin="0,0,0,320" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="360"
+					Grid.Column="1" Grid.ColumnSpan="2">
+			<StackPanel.Background>#60000FFF</StackPanel.Background>
+		</StackPanel>
 	</Grid>
 </Window>
