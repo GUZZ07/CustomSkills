@@ -1,6 +1,9 @@
-﻿using SkillDesigner.Libs;
+﻿using Microsoft.Win32;
+using Newtonsoft.Json;
+using SkillDesigner.Libs;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +48,70 @@ namespace SkillDesigner
 		private void ZoomDown_Click(object sender, RoutedEventArgs args)
 		{
 			CSystem.ZoomDown2();
+		}
+
+		private void AddProj_Click(object sender, RoutedEventArgs args)
+		{
+			CSystem.AddNewView();
+		}
+
+		private void ClearProj_Click(object sender, RoutedEventArgs args)
+		{
+			if (MessageBox.Show("确定要清除?", "提示", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+			{
+				CSystem.ClearViews();
+			}
+		}
+
+		private void PropView_PreKeydown(object sender, KeyEventArgs args)
+		{
+			if (args.Key == Key.Enter)
+			{
+				Hahahaha.Focus();
+			}
+		}
+
+		private void DumpProjs_Click(object sender, RoutedEventArgs args)
+		{
+			var dlg = new SaveFileDialog();
+			dlg.CheckFileExists = false;
+			dlg.Title = "保存技能";
+			dlg.Filter = "json文件|*.json";
+			dlg.FileName = "Skill.json";
+			dlg.DefaultExt = ".json";
+			dlg.AddExtension = true;
+			if (dlg.ShowDialog() == true)
+			{
+				SkillData skilldata = new SkillData();
+				skilldata.ProjDatas = CSystem.ExportDatas();
+				var text = JsonConvert.SerializeObject(skilldata, Formatting.Indented);
+				File.WriteAllTextAsync(dlg.FileName, text);
+			}
+		}
+
+		private void ImportProjs_Click(object sender, RoutedEventArgs args)
+		{
+			var dlg = new OpenFileDialog();
+			dlg.CheckFileExists = true;
+			dlg.Title = "保存技能";
+			dlg.Filter = "json文件|*.json";
+			dlg.FileName = "Skill.json";
+			dlg.DefaultExt = ".json";
+			dlg.AddExtension = true;
+			dlg.Multiselect = false;
+			if (dlg.ShowDialog() == true)
+			{
+				try
+				{
+					var text = File.ReadAllText(dlg.FileName);
+					var skilldata = JsonConvert.DeserializeObject<SkillData>(text);
+					CSystem.ImportDatas(skilldata.ProjDatas);
+				}
+				catch
+				{
+					MessageBox.Show("导入失败");
+				}
+			}
 		}
 	}
 }

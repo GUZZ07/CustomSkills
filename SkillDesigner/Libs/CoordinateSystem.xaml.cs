@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Controls;
 using System.Windows.Shapes;
@@ -13,11 +14,13 @@ using System.Windows.Input;
 using System.Windows;
 
 using WVector = System.Windows.Vector;
+using System.Timers;
 
 namespace SkillDesigner.Libs
 {
 	public partial class CoordinateSystem : UserControl, INotifyPropertyChanged
 	{
+		#region CSystem
 		public static int LowX
 		{
 			get;
@@ -43,6 +46,7 @@ namespace SkillDesigner.Libs
 			get;
 			private set;
 		}
+		#endregion
 		#region MouseAxis
 		public double MouseAxisXX1
 		{
@@ -114,18 +118,161 @@ namespace SkillDesigner.Libs
 
 		private List<Line> horLines;
 		private List<Line> verLines;
-		private List<ProjView> projs;
+		private List<ProjView> projViews;
+		private ProjView focusedView;
+		private bool hideHitbox;
 
-		private bool mouseDown;
-		private Vector? mouseDownPos;
-		private Vector? mouseDownPosSelf;
-
-		public ProjView FocusedView
+		public static int TickCount
 		{
 			get;
 			private set;
 		}
 
+		public ProjView FocusedView
+		{
+			get
+			{
+				return focusedView;
+			}
+			set
+			{
+				focusedView = value;
+				OnFocusedViewChanged();
+			}
+		}
+
+		public bool HideHitbox
+		{
+			get => hideHitbox;
+			set
+			{
+				hideHitbox = value;
+				foreach(var view in projViews)
+				{
+					view.Hitbox.Visibility = value ? Visibility.Hidden : Visibility.Visible;
+				}
+			}
+		}
+
+		#region PropertyViews
+		public int? FVType
+		{
+			get => FocusedView?.Data?.ProjType;
+			set
+			{
+				if (FocusedView?.Data != null)
+				{
+					FocusedView.Data.ProjType = (int)value;
+					FocusedView.DataChanged(true);
+				}
+			}
+		}
+		public int? FVLD
+		{
+			get => FocusedView?.Data?.LaunchDelay;
+			set
+			{
+				if (FocusedView?.Data != null)
+				{
+					FocusedView.Data.LaunchDelay = (int)value;
+					FocusedView.DataChanged(false);
+				}
+			}
+		}
+		public int? FVCD
+		{
+			get => FocusedView?.Data?.CreateDelay;
+			set
+			{
+				if (FocusedView?.Data != null)
+				{
+					FocusedView.Data.CreateDelay = (int)value;
+					FocusedView.DataChanged(false);
+				}
+			}
+		}
+		public int? FVKnockback
+		{
+			get => FocusedView?.Data?.Knockback;
+			set
+			{
+				if (FocusedView?.Data != null)
+				{
+					FocusedView.Data.Knockback = (int)value;
+					FocusedView.DataChanged(false);
+				}
+			}
+		}
+		public int? FVDamage
+		{
+			get => FocusedView?.Data?.Damage;
+			set
+			{
+				if (FocusedView?.Data != null)
+				{
+					FocusedView.Data.Damage = (int)value;
+					FocusedView.DataChanged(false);
+				}
+			}
+		}
+		public Vector? FVPosition
+		{
+			get
+			{
+				if (FocusedView?.Data != null)
+				{
+					return FocusedView.Data.Position / 16;
+				}
+				return null;
+			}
+			set
+			{
+				if (FocusedView?.Data != null)
+				{
+					FocusedView.Data.Position = (Vector)value * 16;
+					FocusedView.DataChanged(false);
+				}
+			}
+		}
+		public float? FVSpeed
+		{
+			get
+			{
+				if (FocusedView?.Data != null)
+				{
+					return (int)(10 * FocusedView.Data.Speed * 60.0 / 16) / 10f;
+				}
+				return null;
+			}
+			set
+			{
+				if (FocusedView?.Data != null)
+				{
+					FocusedView.Data.Speed = (float)(value * 16 / 60);
+					FocusedView.DataChanged(false);
+				}
+			}
+		}
+		public float? FVSpeedAngle
+		{
+			get
+			{
+				if (FocusedView?.Data != null)
+				{
+					return (int)(10 * FocusedView.Data.SpeedAngle * 180 / Math.PI) / 10f % 360;
+				}
+				return null;
+			}
+			set
+			{
+				if (FocusedView?.Data != null)
+				{
+					FocusedView.Data.SpeedAngle = (float)value * MathF.PI / 180;
+					FocusedView.DataChanged(false);
+				}
+			}
+		}
+		#endregion
 
 		public CoordinateSystem()
 		{
@@ -145,11 +292,11 @@ namespace SkillDesigner.Libs
 
 			LoadGrid();
 
-			projs = new List<ProjView>();
+			projViews = new List<ProjView>();
 
-			ProjView proj = new ProjView(new ProjData { ProjType = 636, Position = (64, 0) });
-			projs.Add(proj);
-			Grid.Children.Add(proj);
+			//ProjView proj = new ProjView(new ProjData { ProjType = 636, Position = (64, 0), SpeedAngle = MathF.PI / 2 });
+			//projViews.Add(proj);
+			//Grid.Children.Add(proj);
 
 			LoadBitmaps();
 			LoadViews();
@@ -264,12 +411,59 @@ namespace SkillDesigner.Libs
 			};
 		}
 		#endregion
+		#region Views
+		public void ImportDatas(ProjData[] datas)
+		{
+			ClearViews();
+			foreach (var data in datas)
+			{
+				AddView(new ProjView(data));
+			}
+		}
+		public ProjData[] ExportDatas()
+		{
+			var datas = new ProjData[projViews.Count];
+			for (int i = 0; i < datas.Length; i++)
+			{
+				datas[i] = projViews[i].Data;
+			}
+			return datas;
+		}
+		public void AddNewView()
+		{
+			var view = new ProjView(new ProjData { ProjType = 636 });
+			projViews.Add(view);
+			Grid.Children.Add(view);
+			FocusedView = view;
+		}
+		public void ClearViews()
+		{
+			FocusedView = null;
+			foreach (var view in projViews)
+			{
+				Grid.Children.Remove(view);
+			}
+			projViews.Clear();
+		}
+		public void AddView(ProjView view)
+		{
+			projViews.Add(view);
+			Grid.Children.Add(view);
+		}
+		public void RemoveView(ProjView view)
+		{
+			Grid.Children.Remove(view);
+			projViews.Remove(view);
+		}
+		#endregion
+		#region InRange
 		public bool InRange(Vector point)
 		{
 			return
 				LowX <= point.X && point.X <= HighX &&
 				LowY <= point.Y && point.Y <= HighY;
 		}
+		#endregion
 		#region ModifyCoordinate
 		public void Transport(int Δx, int Δy)
 		{
@@ -385,7 +579,7 @@ namespace SkillDesigner.Libs
 		private void Transformed()
 		{
 			MouseAxisPropChanged();
-			foreach (var proj in projs)
+			foreach (var proj in projViews)
 			{
 				proj.DataChanged(false);
 			}
@@ -414,6 +608,15 @@ namespace SkillDesigner.Libs
 		}
 		#endregion
 		#region Events
+		private void CS_PreviewKeyDown(object sender, KeyEventArgs args)
+		{
+			if (args.Key == Key.Delete && FocusedView != null)
+			{
+				FocusedView = null;
+				RemoveView(FocusedView);
+			}
+		}
+
 		private void CSystem_MouseEnter(object sender, MouseEventArgs args)
 		{
 			MouseAxisVisibility = Visibility.Visible;
@@ -426,12 +629,21 @@ namespace SkillDesigner.Libs
 		{
 			MouseAxisPropChanged();
 			var pos = (Vector)args.GetPosition(this);
-			foreach(var view in projs)
+			foreach(var view in projViews)
 			{
 				view.PView_MouseMoveEx(sender, pos);
 			}
 		}
 
+		private void CS_MouseDown(object sender, MouseButtonEventArgs args)
+		{
+			if (FocusedView != null)
+			{
+				FocusedView.BorderBrush = null;
+			}
+			FocusedView = null;
+			Keyboard.Focus(this);
+		}
 		private void CoordinateSystem_MouseWheel(object sender, MouseWheelEventArgs args)
 		{
 			var pos = args.MouseDevice.GetPosition(this);
@@ -452,27 +664,59 @@ namespace SkillDesigner.Libs
 		private void CoordinateSystem_Loaded(object sender, EventArgs args)
 		{
 			// ProjView.LoadResources();
+			var timer = new Timer(12);
+			timer.Elapsed += (sender, args) =>
+			{
+				TickCount++;
+				try
+				{
+					Dispatcher.Invoke(delegate
+					{
+						foreach (var view in projViews)
+						{
+							view.UpdateFrame(TickCount);
+						}
+					});
+				}
+				catch
+				{
+
+				}
+			};
+			timer.Start();
 		}
 
 		#endregion
 		#region INotifyPropertyChanged
+		private void OnFocusedViewChanged()
+		{
+			OnPropertyChanged(nameof(FVType));
+			OnPropertyChanged(nameof(FVDamage));
+			OnPropertyChanged(nameof(FVKnockback));
+			OnPropertyChanged(nameof(FVPosition));
+			OnPropertyChanged(nameof(FVSpeed));
+			OnPropertyChanged(nameof(FVSpeedAngle));
+			OnPropertyChanged(nameof(FVCD));
+			OnPropertyChanged(nameof(FVLD));
+		}
 		private void MouseAxisPropChanged()
 		{
-			TriggerPropertyChanged(nameof(MouseAxisXX1));
-			TriggerPropertyChanged(nameof(MouseAxisXX2));
-			TriggerPropertyChanged(nameof(MouseAxisXY));
-			TriggerPropertyChanged(nameof(MouseAxisYY1));
-			TriggerPropertyChanged(nameof(MouseAxisYY2));
-			TriggerPropertyChanged(nameof(MouseAxisYX));
-			TriggerPropertyChanged(nameof(MouseAxisText));
-			TriggerPropertyChanged(nameof(MouseAxisTextMargin));
+			OnPropertyChanged(nameof(MouseAxisXX1));
+			OnPropertyChanged(nameof(MouseAxisXX2));
+			OnPropertyChanged(nameof(MouseAxisXY));
+			OnPropertyChanged(nameof(MouseAxisYY1));
+			OnPropertyChanged(nameof(MouseAxisYY2));
+			OnPropertyChanged(nameof(MouseAxisYX));
+			OnPropertyChanged(nameof(MouseAxisText));
+			OnPropertyChanged(nameof(MouseAxisTextMargin));
 		}
-		private void TriggerPropertyChanged(string propName)
+		public void OnPropertyChanged([CallerMemberName]string propName = "")
 		{
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
 		}
 		public event PropertyChangedEventHandler PropertyChanged;
 		#endregion
+
 		#region Draw
 #if false
 		[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.Synchronized)]

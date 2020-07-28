@@ -120,6646 +120,3799 @@
   <data name="PDatas" xml:space="preserve">
     <value>[
 	{
-		Size: {
-			X: 0,
-			Y: 0
-		},
+		Size: "(0, 0)",
 		"Frames": 0
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 28
-		},
+		Size: "(28, 28)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 28
-		},
+		Size: "(28, 28)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 64,
-			Y: 64
-		},
+		Size: "(64, 64)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 48,
-			Y: 48
-		},
+		Size: "(48, 48)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 25,
-			Y: 25
-		},
+		Size: "(25, 25)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 5,
-			Y: 5
-		},
+		Size: "(5, 5)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 17,
-			Y: 17
-		},
+		Size: "(17, 17)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 34,
-			Y: 34
-		},
+		Size: "(34, 34)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 17,
-			Y: 17
-		},
+		Size: "(17, 17)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 5,
-			Y: 5
-		},
+		Size: "(5, 5)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 43,
-			Y: 43
-		},
+		Size: "(43, 43)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 43,
-			Y: 43
-		},
+		Size: "(43, 43)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 21,
-			Y: 21
-		},
+		Size: "(21, 21)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 22
-		},
+		Size: "(10, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 24
-		},
+		Size: "(18, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 24
-		},
+		Size: "(22, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 9,
-			Y: 9
-		},
+		Size: "(9, 9)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 31,
-			Y: 31
-		},
+		Size: "(31, 31)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 23,
-			Y: 23
-		},
+		Size: "(23, 23)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 260,
-			Y: 260
-		},
+		Size: "(260, 260)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 16
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 26
-		},
+		Size: "(26, 26)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 28
-		},
+		Size: "(28, 28)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 28
-		},
+		Size: "(28, 28)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 28
-		},
+		Size: "(28, 28)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 17,
-			Y: 17
-		},
+		Size: "(17, 17)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 44,
-			Y: 44
-		},
+		Size: "(44, 44)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 38,
-			Y: 38
-		},
+		Size: "(38, 38)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 128,
-			Y: 128
-		},
+		Size: "(128, 128)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 34,
-			Y: 34
-		},
+		Size: "(34, 34)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 22
-		},
+		Size: "(14, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 14
-		},
+		Size: "(10, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 18
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 18
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 18
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 18
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 42,
-			Y: 42
-		},
+		Size: "(42, 42)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 26
-		},
+		Size: "(26, 26)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 28
-		},
+		Size: "(28, 28)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 28
-		},
+		Size: "(28, 28)",
 		"Frames": 10
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 36
-		},
+		Size: "(18, 36)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 32
-		},
+		Size: "(12, 32)",
 		"Frames": 12
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 30
-		},
+		Size: "(14, 30)",
 		"Frames": 12
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 10
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 23,
-			Y: 23
-		},
+		Size: "(23, 23)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 21,
-			Y: 21
-		},
+		Size: "(21, 21)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 23,
-			Y: 23
-		},
+		Size: "(23, 23)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 42
-		},
+		Size: "(22, 42)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 33,
-			Y: 33
-		},
+		Size: "(33, 33)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 34,
-			Y: 34
-		},
+		Size: "(34, 34)",
 		"Frames": 13
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 28
-		},
+		Size: "(28, 28)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 54,
-			Y: 28
-		},
+		Size: "(54, 28)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 44
-		},
+		Size: "(4, 44)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 28
-		},
+		Size: "(28, 28)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 54,
-			Y: 28
-		},
+		Size: "(54, 28)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 44
-		},
+		Size: "(4, 44)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 34,
-			Y: 34
-		},
+		Size: "(34, 34)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 15,
-			Y: 15
-		},
+		Size: "(15, 15)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 17,
-			Y: 17
-		},
+		Size: "(17, 17)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 38,
-			Y: 38
-		},
+		Size: "(38, 38)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 34
-		},
+		Size: "(32, 34)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 34,
-			Y: 34
-		},
+		Size: "(34, 34)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 44
-		},
+		Size: "(4, 44)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 16
-		},
+		Size: "(24, 16)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 32
-		},
+		Size: "(18, 32)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 26
-		},
+		Size: "(20, 26)",
 		"Frames": 7
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 26
-		},
+		Size: "(26, 26)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 28
-		},
+		Size: "(28, 28)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 26
-		},
+		Size: "(26, 26)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 46,
-			Y: 46
-		},
+		Size: "(46, 46)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 38,
-			Y: 38
-		},
+		Size: "(38, 38)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 5,
-			Y: 5
-		},
+		Size: "(5, 5)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 28
-		},
+		Size: "(28, 28)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 5,
-			Y: 5
-		},
+		Size: "(5, 5)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 5,
-			Y: 5
-		},
+		Size: "(5, 5)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 5,
-			Y: 5
-		},
+		Size: "(5, 5)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 5,
-			Y: 5
-		},
+		Size: "(5, 5)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 5,
-			Y: 5
-		},
+		Size: "(5, 5)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 130,
-			Y: 130
-		},
+		Size: "(130, 130)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 150,
-			Y: 150
-		},
+		Size: "(150, 150)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 38,
-			Y: 38
-		},
+		Size: "(38, 38)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 38,
-			Y: 38
-		},
+		Size: "(38, 38)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 80,
-			Y: 74
-		},
+		Size: "(80, 74)",
 		"Frames": 10
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 12
-		},
+		Size: "(10, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 12
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 40
-		},
+		Size: "(24, 40)",
 		"Frames": 13
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 28
-		},
+		Size: "(28, 28)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 14
-		},
+		Size: "(12, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 36,
-			Y: 30
-		},
+		Size: "(36, 30)",
 		"Frames": 11
 	},
 	{
-		Size: {
-			X: 34,
-			Y: 34
-		},
+		Size: "(34, 34)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 11,
-			Y: 11
-		},
+		Size: "(11, 11)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 38
-		},
+		Size: "(26, 38)",
 		"Frames": 10
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 16
-		},
+		Size: "(14, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 14
-		},
+		Size: "(12, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 12
-		},
+		Size: "(6, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 80,
-			Y: 80
-		},
+		Size: "(80, 80)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 34,
-			Y: 34
-		},
+		Size: "(34, 34)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 28
-		},
+		Size: "(28, 28)",
 		"Frames": 11
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 3,
-			Y: 3
-		},
+		Size: "(3, 3)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 2
-		},
+		Size: "(24, 2)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 11,
-			Y: 11
-		},
+		Size: "(11, 11)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 23,
-			Y: 23
-		},
+		Size: "(23, 23)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 3,
-			Y: 3
-		},
+		Size: "(3, 3)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 48,
-			Y: 48
-		},
+		Size: "(48, 48)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 28
-		},
+		Size: "(18, 28)",
 		"Frames": 14
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 26
-		},
+		Size: "(24, 26)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 34,
-			Y: 26
-		},
+		Size: "(34, 26)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 66,
-			Y: 50
-		},
+		Size: "(66, 50)",
 		"Frames": 9
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 10
-		},
+		Size: "(14, 10)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 26
-		},
+		Size: "(26, 26)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 34,
-			Y: 34
-		},
+		Size: "(34, 34)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 150,
-			Y: 42
-		},
+		Size: "(150, 42)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 150,
-			Y: 42
-		},
+		Size: "(150, 42)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 40,
-			Y: 20
-		},
+		Size: "(40, 20)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 40,
-			Y: 20
-		},
+		Size: "(40, 20)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 11
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 11
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 11
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 30
-		},
+		Size: "(20, 30)",
 		"Frames": 15
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 30
-		},
+		Size: "(20, 30)",
 		"Frames": 15
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 30
-		},
+		Size: "(20, 30)",
 		"Frames": 15
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 38
-		},
+		Size: "(18, 38)",
 		"Frames": 10
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 16
-		},
+		Size: "(14, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 14
-		},
+		Size: "(12, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 12
-		},
+		Size: "(6, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 26
-		},
+		Size: "(26, 26)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 40
-		},
+		Size: "(28, 40)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 28
-		},
+		Size: "(28, 28)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 56
-		},
+		Size: "(22, 56)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 54
-		},
+		Size: "(26, 54)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 56
-		},
+		Size: "(18, 56)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 54
-		},
+		Size: "(30, 54)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 64
-		},
+		Size: "(28, 64)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 54
-		},
+		Size: "(30, 54)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 1,
-			Y: 1
-		},
+		Size: "(1, 1)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 5,
-			Y: 5
-		},
+		Size: "(5, 5)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 1,
-			Y: 1
-		},
+		Size: "(1, 1)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 80,
-			Y: 80
-		},
+		Size: "(80, 80)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 5,
-			Y: 5
-		},
+		Size: "(5, 5)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 1,
-			Y: 1
-		},
+		Size: "(1, 1)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 46,
-			Y: 46
-		},
+		Size: "(46, 46)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 36,
-			Y: 36
-		},
+		Size: "(36, 36)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 18
-		},
+		Size: "(14, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 48,
-			Y: 48
-		},
+		Size: "(48, 48)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 60,
-			Y: 60
-		},
+		Size: "(60, 60)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 80,
-			Y: 80
-		},
+		Size: "(80, 80)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 40,
-			Y: 40
-		},
+		Size: "(40, 40)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 40,
-			Y: 40
-		},
+		Size: "(40, 40)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 200,
-			Y: 200
-		},
+		Size: "(200, 200)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 200
-		},
+		Size: "(16, 200)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 16
-		},
+		Size: "(20, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 26
-		},
+		Size: "(26, 26)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 32
-		},
+		Size: "(18, 32)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 40,
-			Y: 40
-		},
+		Size: "(40, 40)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 34,
-			Y: 34
-		},
+		Size: "(34, 34)",
 		"Frames": 12
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 15,
-			Y: 15
-		},
+		Size: "(15, 15)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 26
-		},
+		Size: "(26, 26)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 35,
-			Y: 35
-		},
+		Size: "(35, 35)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 44,
-			Y: 41
-		},
+		Size: "(44, 41)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 33,
-			Y: 30
-		},
+		Size: "(33, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 24
-		},
+		Size: "(30, 24)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 21
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 12
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 30
-		},
+		Size: "(18, 30)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 17,
-			Y: 17
-		},
+		Size: "(17, 17)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 17,
-			Y: 17
-		},
+		Size: "(17, 17)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 17,
-			Y: 17
-		},
+		Size: "(17, 17)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 19,
-			Y: 19
-		},
+		Size: "(19, 19)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 17,
-			Y: 17
-		},
+		Size: "(17, 17)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 30
-		},
+		Size: "(18, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 26
-		},
+		Size: "(26, 26)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 26
-		},
+		Size: "(26, 26)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 40,
-			Y: 40
-		},
+		Size: "(40, 40)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 68,
-			Y: 64
-		},
+		Size: "(68, 64)",
 		"Frames": 28
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 5,
-			Y: 5
-		},
+		Size: "(5, 5)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 160,
-			Y: 160
-		},
+		Size: "(160, 160)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 54
-		},
+		Size: "(30, 54)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 64
-		},
+		Size: "(28, 64)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 7
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 30
-		},
+		Size: "(18, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 50,
-			Y: 80
-		},
+		Size: "(50, 80)",
 		"Frames": 19
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 18
-		},
+		Size: "(14, 18)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 40,
-			Y: 40
-		},
+		Size: "(40, 40)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 40,
-			Y: 40
-		},
+		Size: "(40, 40)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 7
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 31,
-			Y: 31
-		},
+		Size: "(31, 31)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 54
-		},
+		Size: "(30, 54)",
 		"Frames": 7
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 58
-		},
+		Size: "(28, 58)",
 		"Frames": 9
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 28,
-			Y: 60
-		},
+		Size: "(28, 60)",
 		"Frames": 9
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 54
-		},
+		Size: "(26, 54)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 54
-		},
+		Size: "(26, 54)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 54
-		},
+		Size: "(26, 54)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 96,
-			Y: 96
-		},
+		Size: "(96, 96)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 96,
-			Y: 96
-		},
+		Size: "(96, 96)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 96,
-			Y: 96
-		},
+		Size: "(96, 96)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 50,
-			Y: 200
-		},
+		Size: "(50, 200)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 40,
-			Y: 40
-		},
+		Size: "(40, 40)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 60,
-			Y: 210
-		},
+		Size: "(60, 210)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 66,
-			Y: 66
-		},
+		Size: "(66, 66)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 7
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 2,
-			Y: 2
-		},
+		Size: "(2, 2)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 31,
-			Y: 31
-		},
+		Size: "(31, 31)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 24,
-			Y: 24
-		},
+		Size: "(24, 24)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 15,
-			Y: 15
-		},
+		Size: "(15, 15)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 2,
-			Y: 2
-		},
+		Size: "(2, 2)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 24
-		},
+		Size: "(30, 24)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 68,
-			Y: 64
-		},
+		Size: "(68, 64)",
 		"Frames": 28
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 16,
-			Y: 16
-		},
+		Size: "(16, 16)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 34,
-			Y: 34
-		},
+		Size: "(34, 34)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 30
-		},
+		Size: "(20, 30)",
 		"Frames": 24
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 5
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 10
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 26
-		},
+		Size: "(26, 26)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 26
-		},
+		Size: "(26, 26)",
 		"Frames": 10
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 32
-		},
+		Size: "(26, 32)",
 		"Frames": 17
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 26
-		},
+		Size: "(26, 26)",
 		"Frames": 18
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 36
-		},
+		Size: "(20, 36)",
 		"Frames": 23
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 32
-		},
+		Size: "(26, 32)",
 		"Frames": 26
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 20
-		},
+		Size: "(26, 20)",
 		"Frames": 10
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 30
-		},
+		Size: "(20, 30)",
 		"Frames": 12
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 30
-		},
+		Size: "(20, 30)",
 		"Frames": 12
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 26
-		},
+		Size: "(26, 26)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 4,
-			Y: 4
-		},
+		Size: "(4, 4)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 32
-		},
+		Size: "(26, 32)",
 		"Frames": 19
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 26,
-			Y: 20
-		},
+		Size: "(26, 20)",
 		"Frames": 14
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 32
-		},
+		Size: "(20, 32)",
 		"Frames": 24
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 14
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 2
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 11
 	},
 	{
-		Size: {
-			X: 5,
-			Y: 5
-		},
+		Size: "(5, 5)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 25,
-			Y: 25
-		},
+		Size: "(25, 25)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 25,
-			Y: 25
-		},
+		Size: "(25, 25)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 25,
-			Y: 25
-		},
+		Size: "(25, 25)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 12
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 20
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 14
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 10
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 36
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 11
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 12
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 15
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 4
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 16
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 11
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 16
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 14
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 14
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 12
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 12
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 22,
-			Y: 22
-		},
+		Size: "(22, 22)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 6
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 96,
-			Y: 96
-		},
+		Size: "(96, 96)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 8,
-			Y: 8
-		},
+		Size: "(8, 8)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 3
 	},
 	{
-		Size: {
-			X: 6,
-			Y: 6
-		},
+		Size: "(6, 6)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 12,
-			Y: 12
-		},
+		Size: "(12, 12)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 40,
-			Y: 40
-		},
+		Size: "(40, 40)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 34,
-			Y: 34
-		},
+		Size: "(34, 34)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 8
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 30,
-			Y: 30
-		},
+		Size: "(30, 30)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 32,
-			Y: 32
-		},
+		Size: "(32, 32)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 12
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 14,
-			Y: 14
-		},
+		Size: "(14, 14)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 10,
-			Y: 10
-		},
+		Size: "(10, 10)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 18,
-			Y: 18
-		},
+		Size: "(18, 18)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 7,
-			Y: 7
-		},
+		Size: "(7, 7)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 1
 	},
 	{
-		Size: {
-			X: 20,
-			Y: 20
-		},
+		Size: "(20, 20)",
 		"Frames": 1
 	}
 ]</value>

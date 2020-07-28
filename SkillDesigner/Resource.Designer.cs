@@ -63,64 +63,51 @@ namespace SkillDesigner {
         /// <summary>
         ///   查找类似 [
         ///	{
-        ///		Size: {
-        ///			X: 0,
-        ///			Y: 0
-        ///		},
+        ///		Size: &quot;(0, 0)&quot;,
         ///		&quot;Frames&quot;: 0
         ///	},
         ///	{
-        ///		Size: {
-        ///			X: 10,
-        ///			Y: 10
-        ///		},
+        ///		Size: &quot;(10, 10)&quot;,
         ///		&quot;Frames&quot;: 1
         ///	},
         ///	{
-        ///		Size: {
-        ///			X: 10,
-        ///			Y: 10
-        ///		},
+        ///		Size: &quot;(10, 10)&quot;,
         ///		&quot;Frames&quot;: 1
         ///	},
         ///	{
-        ///		Size: {
-        ///			X: 22,
-        ///			Y: 22
-        ///		},
+        ///		Size: &quot;(22, 22)&quot;,
         ///		&quot;Frames&quot;: 1
         ///	},
         ///	{
-        ///		Size: {
-        ///			X: 10,
-        ///			Y: 10
-        ///		},
+        ///		Size: &quot;(10, 10)&quot;,
         ///		&quot;Frames&quot;: 1
         ///	},
         ///	{
-        ///		Size: {
-        ///			X: 10,
-        ///			Y: 10
-        ///		},
+        ///		Size: &quot;(10, 10)&quot;,
         ///		&quot;Frames&quot;: 1
         ///	},
         ///	{
-        ///		Size: {
-        ///			X: 22,
-        ///			Y: 22
-        ///		},
+        ///		Size: &quot;(22, 22)&quot;,
         ///		&quot;Frames&quot;: 1
         ///	},
         ///	{
-        ///		Size: {
-        ///			X: 28,
-        ///			Y: 28
-        ///		},
+        ///		Size: &quot;(28, 28)&quot;,
         ///		&quot;Frames&quot;: 1
         ///	},
         ///	{
-        ///		Size: {
-        /// [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///		Size: &quot;(28, 28)&quot;,
+        ///		&quot;Frames&quot;: 1
+        ///	},
+        ///	{
+        ///		Size: &quot;(19, 19)&quot;,
+        ///		&quot;Frames&quot;: 1
+        ///	},
+        ///	{
+        ///		Size: &quot;(64, 64)&quot;,
+        ///		&quot;Frames&quot;: 1
+        ///	},
+        ///	{
+        ///		Size: &quot;(48 [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         internal static string PDatas {
             get {

@@ -50,5 +50,20 @@ namespace SkillDesigner.Libs
 			get;
 			set;
 		}
+
+		public ProjData Clone()
+		{
+			return new ProjData
+			{
+				CreateDelay = CreateDelay,
+				LaunchDelay = LaunchDelay,
+				ProjType = ProjType,
+				Damage = Damage,
+				Speed = Speed,
+				SpeedAngle = SpeedAngle,
+				Position = Position,
+				Knockback = Knockback
+			};
+		}
 	}
 }

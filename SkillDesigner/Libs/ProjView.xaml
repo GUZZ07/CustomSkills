@@ -12,13 +12,22 @@
 			Width="{Binding TextureWidth}"
 			Height="{Binding TextureHeight}"
 			Background="{Binding Texture}"
-			LayoutTransform="{Binding ProjTransform}"
-			RenderTransformOrigin="0.5,0.5"
-			BorderBrush="Red"
+			BorderBrush="{x:Null}"
 			BorderThickness="1,1,1,1"
 			MouseDown="PView_MouseDown"
 			MouseUp="PView_MouseUp"
 	>
+	<UserControl.LayoutTransform>
+		<TransformGroup>
+			<ScaleTransform x:Name="Scale" ScaleX="1" ScaleY="1"/>
+		</TransformGroup>
+	</UserControl.LayoutTransform>
+	<UserControl.RenderTransform>
+		<TransformGroup>
+			<RotateTransform x:Name="Rotation" Angle="0"/>
+			<TranslateTransform x:Name="Translation" X="0" Y="0"/>
+		</TransformGroup>
+	</UserControl.RenderTransform>
 	<Rectangle x:Name="Hitbox"
 					Stroke="Yellow"
 					StrokeThickness="0.75"

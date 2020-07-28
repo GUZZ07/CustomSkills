@@ -8,6 +8,8 @@
              d:DesignHeight="640" d:DesignWidth="640"
 			 MouseWheel="CoordinateSystem_MouseWheel" MouseMove="CSystem_MouseMove"
 			 MouseEnter="CSystem_MouseEnter" MouseLeave="CSystem_MouseLeave"
+			 MouseDown="CS_MouseDown"
+			 PreviewKeyDown="CS_PreviewKeyDown"
 			 x:Name="CS">
 	<UserControl.Resources>
 		<Style x:Key="HorAxis" TargetType="{x:Type Line}">

@@ -15,6 +15,7 @@ using System.Reflection.Metadata;
 
 using WVector = System.Windows.Vector;
 using System.Windows.Input;
+using System.Runtime.CompilerServices;
 
 namespace SkillDesigner.Libs
 {
@@ -30,17 +31,6 @@ namespace SkillDesigner.Libs
 		}
 		private static ProjViewData[] ProjViewDatas;
 		private static TextureManager Textures;
-
-		public static bool HideHitbox
-		{
-			get;
-			set;
-		}
-		public static bool HideTexture
-		{
-			get;
-			set;
-		}
 
 		public static bool LoadedResource
 		{
@@ -63,10 +53,16 @@ namespace SkillDesigner.Libs
 			ProjViewDatas[48].SpriteRotation = -Math.PI / 2;
 			ProjViewDatas[348].SpriteRotation = -Math.PI / 2;
 			ProjViewDatas[636].SpriteRotation = -Math.PI / 2;
+			ProjViewDatas[639].SpriteRotation = -Math.PI / 2;
 
 			ProjViewDatas[238].NoRotation = true;
 			ProjViewDatas[254].NoRotation = true;
+			ProjViewDatas[384].NoRotation = true;
+			ProjViewDatas[386].NoRotation = true;
+			ProjViewDatas[423].NoRotation = true;
 			ProjViewDatas[465].NoRotation = true;
+			ProjViewDatas[696].NoRotation = true;
+
 			#region Override Size
 			static void OverrideSize(float? width, float? height, params int[] types)
 			{
@@ -112,13 +108,12 @@ namespace SkillDesigner.Libs
 		{
 			Textures.Dispose();
 		}
-
-		private int frame;
-		private int t;
 		private ProjData projData;
 		private bool mouseDown;
+		private bool canMove;
 		private Vector? mouseDownPos;
 		private Vector? mouseDownPosSelf;
+		private int frame;
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
@@ -129,7 +124,7 @@ namespace SkillDesigner.Libs
 		}
 		public CoordinateSystem CSystem
 		{
-			get => (CoordinateSystem)((Control)Parent).Parent;
+			get => (CoordinateSystem)((FrameworkElement)Parent).Parent;
 		}
 		public Vector ProjSize => ProjViewDatas[Data.ProjType].Size;
 		public ImageBrush Texture
@@ -142,10 +137,11 @@ namespace SkillDesigner.Libs
 				}
 				var brush = new ImageBrush(Textures[Data.ProjType]);
 				var viewbox = new Rect();
-				viewbox.Height = 1;
-				viewbox.Width = 1 / TextureData.Frames;
-				viewbox.Y = 1 / TextureData.Frames * frame;
 
+				viewbox.Width = 1;
+				viewbox.Height = 1.0 / TextureData.Frames;
+				viewbox.Y = 1.0 / TextureData.Frames * frame;
+				brush.Stretch = Stretch.None;
 				brush.Viewbox = viewbox;
 				return brush;
 			}
@@ -176,35 +172,13 @@ namespace SkillDesigner.Libs
 				{
 					return default;
 				}
-				var offset = new Vector(TextureWidth, TextureHeight) / 2;
-				if (TextureData.SpecialHeight)
-				{
-					offset.Y += (float)(TextureHeight - TextureData.Size.Y) / 2;
-				}
-				offset.Angle += (TextureData.SpriteRotation + Data.SpeedAngle);
+				var offset = new Vector(TextureWidth, -TextureHeight) / 2;
+				// offset.Angle += (TextureData.SpriteRotation + Data.SpeedAngle);
 				var pos = CoordinateSystem.Transform(Data.Position - offset);
 				return new Thickness(pos.X, pos.Y, 0, 0);
 			}
 		}
 
-		public Transform ProjTransform
-		{
-			get
-			{
-				var matrix = Matrix.Identity;
-				if (Data == null)
-				{
-					return new MatrixTransform(matrix);
-				}
-				if (!TextureData.NoRotation)
-				{
-					matrix.RotateAt(-TextureData.SpriteRotation * 180 / Math.PI, 0, 0);
-					matrix.RotateAt(-Data.SpeedAngle * 180 / Math.PI, 0, 0);
-				}
-				matrix.ScaleAt(CoordinateSystem.PixelPerPoint, CoordinateSystem.PixelPerPoint, 0, 0);
-				return new MatrixTransform(matrix);
-			}
-		}
 		private ProjViewData TextureData => ProjViewDatas[Data.ProjType];
 
 		public bool NoRotation
@@ -221,37 +195,53 @@ namespace SkillDesigner.Libs
 		{
 			InitializeComponent();
 			LoadResources();
-			Data = data;
 			VerticalAlignment = VerticalAlignment.Top;
 			HorizontalAlignment = HorizontalAlignment.Left;
+			Data = data;
 		}
+
 
 		public void DataChanged(bool changeProjType)
 		{
 			var handler = PropertyChanged;
 			if (handler != null)
 			{
-				handler(this, new PropertyChangedEventArgs(nameof(ProjTransform)));
-				handler(this, new PropertyChangedEventArgs(nameof(ProjMargin)));
+				// handler(this, new PropertyChangedEventArgs(nameof(ProjTransform)));
+				// handler(this, new PropertyChangedEventArgs(nameof(ProjRenderTransform)));
 				if (changeProjType)
 				{
 					handler(this, new PropertyChangedEventArgs(nameof(TextureWidth)));
 					handler(this, new PropertyChangedEventArgs(nameof(TextureHeight)));
 					handler(this, new PropertyChangedEventArgs(nameof(Texture)));
-					Vector origin;
-					if (TextureData.SpecialHeight)
-					{
-						origin = (0.5, 1 - (TextureData.Size.Y / TextureHeight) / 2);
-					}
-					else
-					{
-						origin = (0.5, 0.5);
-					}
-					RenderTransformOrigin = origin;
 					Hitbox.Width = HitboxWidth;
 					Hitbox.Height = HitboxHeight;
 					Hitbox.Margin = new Thickness(TextureWidth / 2 - HitboxWidth / 2, 0, 0, 0);
 				}
+				handler(this, new PropertyChangedEventArgs(nameof(ProjMargin)));
+
+				Vector origin;
+				if (TextureData.SpecialHeight)
+				{
+					origin = (0.5, (TextureData.Size.Y / TextureHeight) / 2);
+				}
+				else
+				{
+					origin = (0.5, 0.5);
+				}
+				Rotation.CenterX = origin.X * TextureWidth* CoordinateSystem.PixelPerPoint;
+				Rotation.CenterY = origin.Y * TextureHeight* CoordinateSystem.PixelPerPoint;
+				Translation.Y = (0.5 - origin.Y) * TextureHeight * CoordinateSystem.PixelPerPoint;
+
+				double angle = TextureData.SpriteRotation;
+				if (!TextureData.NoRotation)
+				{
+					angle += Data.SpeedAngle;
+				}
+
+				Scale.ScaleX = CoordinateSystem.PixelPerPoint;
+				Scale.ScaleY = CoordinateSystem.PixelPerPoint;
+				Rotation.Angle = -angle * 180 / Math.PI;
+				// Background.RelativeTransform = ProjRenderTransform;
 			}
 		}
 		public void SetData(ProjData data)
@@ -260,77 +250,53 @@ namespace SkillDesigner.Libs
 			projData = data;
 			DataChanged(oldData?.ProjType != data.ProjType);
 		}
+		public void UpdateFrame(in int timer)
+		{
+			if (timer % (30 / TextureData.Frames) == 0)
+			{
+				frame++;
+				frame %= TextureData.Frames;
+				var brush = Background as ImageBrush;
+				var viewbox = new Rect();
+
+				viewbox.Width = 1;
+				viewbox.Height = 1.0 / TextureData.Frames;
+				viewbox.Y = 1.0 / TextureData.Frames * frame;
+				brush.Viewbox = viewbox;
+			}
+		}
 		#region Events
 		public void PView_MouseMoveEx(object sender, Vector mousePos)
 		{
-			if (mouseDown)
+			if (mouseDown && canMove && CSystem.FocusedView == this)
 			{
 				var delta = mousePos - (Vector)mouseDownPos;
 				delta.Y *= -1;
 				Data.Position = (Vector)mouseDownPosSelf + delta / CoordinateSystem.PixelPerPoint;
 				DataChanged(false);
+				CSystem.OnPropertyChanged(nameof(CSystem.FVPosition));
 			}
 		}
 		private void PView_MouseDown(object sender, MouseEventArgs args)
 		{
+			if (CSystem.FocusedView == this)
+			{
+				canMove = true;
+			}
 			mouseDown = true;
 			mouseDownPos = (Vector)args.GetPosition((IInputElement)Parent);
 			mouseDownPosSelf = Data.Position;
+			args.Handled = true;
 		}
 		private void PView_MouseUp(object sender, EventArgs args)
 		{
+			CSystem.FocusedView = this;
+			BorderBrush = Brushes.Red;
+			canMove = false;
 			mouseDown = false;
 			mouseDownPos = null;
 			mouseDownPosSelf = null;
 		}
 		#endregion
-
-
-#if false
-		public void Draw(Graphics graphics, CoordinateSystem coordinateSystem, Brush brush = null)
-		{
-			t++;
-			if (t % (30 / TextureData.Frames) == 0)
-			{
-				frame++;
-				frame %= TextureData.Frames;
-			}
-			var texture = Textures[Data.ProjType];
-			var ppp = coordinateSystem.PixelPerPoint;
-			if (!TextureData.NoRotation)
-			{
-				var matrix = graphics.Transform;
-				var sr = -(float)(TextureData.SpriteRotation * 180 / Math.PI);
-				matrix.RotateAt(sr, coordinateSystem.Transform(Data.Position));
-				matrix.RotateAt(-Data.SpeedAngle / MathF.PI * 180, coordinateSystem.Transform(Data.Position));
-				graphics.Transform = matrix;
-			}
-		#region DrawHitbox
-			if (!HideHitbox)
-			{
-				graphics.FillRectangle(brush, GetRect(coordinateSystem));
-			}
-		#endregion
-
-		#region DrawTexture
-			if (!HideTexture)
-			{
-				var pos = coordinateSystem.Transform(Data.Position) - new Vector(texture.Width, TextureData.SpecialHeight ? ProjSize.Y : texture.Height / TextureData.Frames) * ppp / 2f;
-				if (TextureData.Frames == 1)
-				{
-					pos.X += ppp / 2f;
-				}
-				var srcRect = new RectangleF(0, frame * texture.Height / TextureData.Frames, texture.Width, texture.Height / TextureData.Frames);
-				var destRect = new RectangleF(pos, srcRect.Size * ppp);
-				graphics.DrawImage(texture, destRect, srcRect, GraphicsUnit.Pixel);
-			}
-		#endregion
-			graphics.ResetTransform();
-			if (!NoRotation)
-			{
-				Data.SpeedAngle += MathF.PI / 180;
-			}
-		}
-#endif
 	}
 }

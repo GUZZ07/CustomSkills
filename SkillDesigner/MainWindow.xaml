@@ -3,18 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SkillDesigner" xmlns:libs="clr-namespace:SkillDesigner.Libs;assembly=SkillDesigner.Libs" xmlns:Libs="clr-namespace:SkillDesigner.Libs"
+        xmlns:local="clr-namespace:SkillDesigner" xmlns:Libs="clr-namespace:SkillDesigner.Libs"
 		mc:Ignorable="d"
         Title="SkillDesigner" Height="678" Width="1016" MinHeight="678" MinWidth="1016" 
 		WindowStyle="SingleBorderWindow"
-		>
+		
+	xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
 	<Window.Resources>
-		<Style x:Key="ZoomButton" TargetType="Button">
+		<Style x:Key="MyButton" TargetType="Button">
 			<Style.Setters>
 				<Setter Property="Width" Value="88"/>
 				<Setter Property="Height" Value="44"/>
 				<Setter Property="Foreground" Value="Aqua"/>
 				<Setter Property="FontSize" Value="20"/>
+				<Setter Property="Grid.Column" Value="2"/>
+				<Setter Property="Grid.ColumnSpan" Value="3"/>
 				<Setter Property="Template">
 					<Setter.Value>
 						<ControlTemplate TargetType="Button">
@@ -37,6 +40,32 @@
 				</Setter>
 			</Style.Setters>
 		</Style>
+		<Style x:Key="PropViewLabel" TargetType="Label">
+			<Style.Setters>
+				<Setter Property="Height" Value="40"/>
+				<Setter Property="Background" Value="Transparent"/>
+				<Setter Property="BorderBrush" Value="White"/>
+				<Setter Property="BorderThickness" Value="1,1,1,1"/>
+				<Setter Property="Foreground" Value="White"/>
+				<Setter Property="VerticalAlignment" Value="Top"/>
+				<Setter Property="VerticalContentAlignment" Value="Center"/>
+				<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			</Style.Setters>
+		</Style>
+		<Style x:Key="PropViewTextBox" TargetType="TextBox">
+			<Style.Setters>
+				<EventSetter Event="PreviewKeyDown" Handler="PropView_PreKeydown"/>
+				<Setter Property="Height" Value="40"/>
+				<Setter Property="Foreground" Value="White"/>
+				<Setter Property="Background" Value="#20FFFFFF"/>
+				<Setter Property="BorderBrush" Value="White"/>
+				<Setter Property="BorderThickness" Value="1,1,1,1"/>
+				<Setter Property="VerticalAlignment" Value="Top"/>
+				<Setter Property="VerticalContentAlignment" Value="Center"/>
+				<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			</Style.Setters>
+		</Style>
+
 	</Window.Resources>
 	<Window.Background>
 		<ImageBrush ImageSource="/Background.png" Stretch="UniformToFill"/>
@@ -45,22 +74,59 @@
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="640"/>
 			<ColumnDefinition Width="0"/>
-			<ColumnDefinition Width="360*"/>
+			<ColumnDefinition Width="0"/>
+			<ColumnDefinition Width="110*"/>
+			<ColumnDefinition Width="210*"/>
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="640"></RowDefinition>
 		</Grid.RowDefinitions>
 		<Libs:CoordinateSystem x:Name="CSystem"
 				Width="640" Height="640" Grid.ColumnSpan="2"/>
-		<Button x:Name="ZoomUp" Margin="45,576,227,20" Grid.Column="2"  Style="{StaticResource ZoomButton}" Click="ZoomUp_Click" Width="88" HorizontalAlignment="Stretch" Grid.ColumnSpan="1">
+		<Button x:Name="AddProj" FontSize="15" Margin="45,508,227,88" Style="{StaticResource MyButton}" Click="AddProj_Click" Width="88">
+			<Button.Content>添加</Button.Content>
+		</Button>
+		<Button x:Name="ClearProj" FontSize="15" Margin="227,508,45,88" Style="{StaticResource MyButton}" Click="ClearProj_Click" Width="88">
+			<Button.Content>清除</Button.Content>
+		</Button>
+		<Button x:Name="DumpProjs" FontSize="15" Margin="227,440,45,156" Style="{StaticResource MyButton}" Click="DumpProjs_Click" Width="88">
+			<Button.Content>导出</Button.Content>
+		</Button>
+		<Button x:Name="ImportProjs" FontSize="15" Margin="45,440,227,156" Style="{StaticResource MyButton}" Click="ImportProjs_Click" Width="88">
+			<Button.Content>导入</Button.Content>
+		</Button>
+		<Button x:Name="ZoomUp" Margin="45,576,227,20" Style="{StaticResource MyButton}" Click="ZoomUp_Click" Width="88">
 			<Button.Content>+</Button.Content>
 		</Button>
-		<Button x:Name="ZoomDown" Margin="227,576,45,20" Grid.Column="2" Style="{StaticResource ZoomButton}" Click="ZoomDown_Click" Width="88">
+		<Button x:Name="ZoomDown" Margin="227,576,45,20" Style="{StaticResource MyButton}" Click="ZoomDown_Click" Width="88">
 			<Button.Content>-</Button.Content>
 		</Button>
-		<StackPanel x:Name="PropertyViewer" Margin="0,0,0,320" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="360"
-					Grid.Column="1" Grid.ColumnSpan="2">
-			<StackPanel.Background>#60000FFF</StackPanel.Background>
+		<CheckBox Foreground="Aqua" Content="隐藏碰撞箱"
+				  HorizontalContentAlignment="Stretch"
+				  VerticalContentAlignment="Stretch"
+				  IsChecked="{Binding HideHitbox}" DataContext="{Binding ElementName=CSystem}"
+				  Margin="0,367,237,255"
+				  Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Right" Width="86"/>
+		<StackPanel Grid.Column="2" Grid.ColumnSpan="2" Height="320" VerticalAlignment="Top">
+			<Label Style="{StaticResource PropViewLabel}" Content="弹幕类型" ToolTip="弹幕ID, 详见wiki"/>
+			<Label Style="{StaticResource PropViewLabel}" Content="伤害"/>
+			<Label Style="{StaticResource PropViewLabel}" Content="击退" ToolTip="一个1~20之间的整数, 超过20与20等效"/>
+			<Label Style="{StaticResource PropViewLabel}" Content="位置" ToolTip="以方块为单位"/>
+			<Label Style="{StaticResource PropViewLabel}" Content="速率" ToolTip="每秒走过的方块长度"/>
+			<Label Style="{StaticResource PropViewLabel}" Content="速度角" ToolTip="发射角度"/>
+			<Label Style="{StaticResource PropViewLabel}" Content="生成延时" ToolTip="用于延时生成弹幕"/>
+			<Label Style="{StaticResource PropViewLabel}" Content="发射延时" ToolTip="用于延时发射弹幕"/>
 		</StackPanel>
+		<StackPanel Grid.Column="4" Grid.ColumnSpan="2" Height="320" VerticalAlignment="Top">
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVType, Mode=TwoWay}"></TextBox>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVDamage, Mode=TwoWay}"></TextBox>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVKnockback, Mode=TwoWay}"></TextBox>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVPosition, Mode=TwoWay}"></TextBox>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVSpeed, Mode=TwoWay}"></TextBox>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVSpeedAngle, Mode=TwoWay}"></TextBox>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVCD, Mode=TwoWay}"></TextBox>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVLD, Mode=TwoWay}"></TextBox>
+		</StackPanel>
+		<Button x:Name="Hahahaha" Width="20" Height="20" Margin="-63,430,683,190"/>
 	</Grid>
 </Window>

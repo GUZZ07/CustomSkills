@@ -2,9 +2,15 @@ using System;
 using System.Windows;
 using System.Globalization;
 using System.Numerics;
+using System.ComponentModel;
+using System.Text.RegularExpressions;
+using System.Runtime.CompilerServices;
+using Newtonsoft.Json;
 
 namespace SkillDesigner.Libs
 {
+	[TypeConverter(typeof(VectorConverter))]
+	[JsonConverter(typeof(VectorConverterJ))]
 	public struct Vector
 	{
 		public static Vector[] Array;
@@ -568,5 +574,48 @@ namespace SkillDesigner.Libs
 		public static implicit operator Point(Vector value) => new Point(value.X, value.Y);
 		public static explicit operator Vector(Point value) => new Vector((float)value.X, (float)value.Y);
 
+	}
+	internal class VectorConverter : TypeConverter
+	{
+		public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
+		{
+			if (sourceType == typeof(string)) return true;
+			return base.CanConvertFrom(context, sourceType);
+		}
+		public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
+		{
+			if (destinationType == typeof(string)) return true;
+			return base.CanConvertTo(context, destinationType);
+		}
+		public new static Vector ConvertFrom(object value)
+		{
+			var match = Regex.Match((string)value, @"\(?(.*),\b?([^)]*)\)?");
+			return (double.Parse(match.Groups[1].Value), double.Parse(match.Groups[2].Value));
+		}
+		public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
+		{
+			return ConvertFrom(value);
+		}
+		public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
+		{
+			return value?.ToString();
+		}
+	}
+	internal class VectorConverterJ : JsonConverter
+	{
+		public override bool CanConvert(Type objectType)
+		{
+			return objectType == typeof(Vector);
+		}
+
+		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+		{
+			return VectorConverter.ConvertFrom(reader.Value);
+		}
+
+		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+		{
+			writer.WriteValue(value.ToString());
+		}
 	}
 }

@@ -7,17 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="MainForm.cs" />
-    <Compile Remove="MainForm.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="Background.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="MainForm.cs" />
-    <None Include="MainForm.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
