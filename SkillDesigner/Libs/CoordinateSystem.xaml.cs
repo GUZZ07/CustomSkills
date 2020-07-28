@@ -267,7 +267,7 @@ namespace SkillDesigner.Libs
 			{
 				if (FocusedView?.Data != null)
 				{
-					FocusedView.Data.SpeedAngle = (float)value * MathF.PI / 180;
+					FocusedView.Data.SpeedAngle = (float)(value * Math.PI / 180);
 					FocusedView.DataChanged(false);
 				}
 			}
@@ -343,7 +343,7 @@ namespace SkillDesigner.Libs
 				Position = Vector.FromPolar(Math.PI * 1.5, 16 * 3.5f),
 				ProjType = 636,
 				Speed = 14,
-				SpeedAngle = MathF.PI / 2
+				SpeedAngle = (float)Math.PI / 2
 			};
 			var data2 = new ProjData
 			{

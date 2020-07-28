@@ -7,8 +7,7 @@
 		mc:Ignorable="d"
         Title="SkillDesigner" Height="678" Width="1016" MinHeight="678" MinWidth="1016" 
 		WindowStyle="SingleBorderWindow"
-		
-	xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
+	xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" Icon="/Designer.ico">
 	<Window.Resources>
 		<Style x:Key="MyButton" TargetType="Button">
 			<Style.Setters>

@@ -11,7 +11,6 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using Newtonsoft.Json;
 using System.Windows.Media.Imaging;
-using System.Reflection.Metadata;
 
 using WVector = System.Windows.Vector;
 using System.Windows.Input;

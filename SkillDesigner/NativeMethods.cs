@@ -6,6 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
+namespace Microsoft.Windows.Themes
+{
+    internal class Emmmmmmmmmmmmmm { }
+}
 namespace SkillDesigner
 {
 	public static class NativeMethods

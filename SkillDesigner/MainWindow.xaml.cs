@@ -85,7 +85,7 @@ namespace SkillDesigner
 				SkillData skilldata = new SkillData();
 				skilldata.ProjDatas = CSystem.ExportDatas();
 				var text = JsonConvert.SerializeObject(skilldata, Formatting.Indented);
-				File.WriteAllTextAsync(dlg.FileName, text);
+				File.WriteAllText(dlg.FileName, text);
 			}
 		}
 

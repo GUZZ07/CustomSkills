@@ -2,12 +2,14 @@
 
   <PropertyGroup>
 	<OutputType>winexe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFrameworks>net5.0;net472;</TargetFrameworks>
+	<LangVersion>preview</LangVersion>
 	<UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Background.png" />
+    <None Remove="Designer.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +22,7 @@
 
   <ItemGroup>
     <Resource Include="Background.png" />
+    <Resource Include="Designer.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,7 +48,7 @@
 
   <!--
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-	<Exec Command="xcopy ../SkillDesigner.Libs/Projs $(OutDir)Projs /E /I /Y /Q" />
+	<Exec Command="xcopy Projs $(OutDir)Projs /E /I /Y /Q" />
   </Target>
   -->
 
