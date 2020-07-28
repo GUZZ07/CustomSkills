@@ -112,7 +112,7 @@
 			<Label Style="{StaticResource PropViewLabel}" Content="击退" ToolTip="一个1~20之间的整数, 超过20与20等效"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="位置" ToolTip="以方块为单位"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="速率" ToolTip="每秒走过的方块长度"/>
-			<Label Style="{StaticResource PropViewLabel}" Content="速度角" ToolTip="发射角度"/>
+			<Label Style="{StaticResource PropViewLabel}" Content="速度角" ToolTip="发射角度(角度制)"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="生成延时" ToolTip="用于延时生成弹幕"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="发射延时" ToolTip="用于延时发射弹幕"/>
 		</StackPanel>

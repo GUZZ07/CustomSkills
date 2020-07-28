@@ -33,6 +33,7 @@ namespace SkillDesigner
 		public MainWindow()
 		{
 			Instance = this;
+			WindowStartupLocation = WindowStartupLocation.CenterScreen;
 			InitializeComponent();
 			//CSystem = new CoordinateSystem();
 			//Grid.Children.Add(CSystem);
@@ -73,19 +74,30 @@ namespace SkillDesigner
 
 		private void DumpProjs_Click(object sender, RoutedEventArgs args)
 		{
-			var dlg = new SaveFileDialog();
-			dlg.CheckFileExists = false;
-			dlg.Title = "保存技能";
-			dlg.Filter = "json文件|*.json";
-			dlg.FileName = "Skill.json";
-			dlg.DefaultExt = ".json";
-			dlg.AddExtension = true;
-			if (dlg.ShowDialog() == true)
+			var dialog = new SkillInfoDialog();
+			dialog.ShowDialog();
+			if (dialog.Yes)
 			{
-				SkillData skilldata = new SkillData();
-				skilldata.ProjDatas = CSystem.ExportDatas();
-				var text = JsonConvert.SerializeObject(skilldata, Formatting.Indented);
-				File.WriteAllText(dlg.FileName, text);
+				var dlg = new SaveFileDialog
+				{
+					CheckFileExists = false,
+					Title = "导出技能",
+					Filter = "json文件|*.json",
+					FileName = dialog.SkillName + ".json",
+					DefaultExt = ".json",
+					AddExtension = true
+				};
+				if (dlg.ShowDialog() == true)
+				{
+					SkillData skilldata = new SkillData
+					{
+						SkillName = dialog.SkillName,
+						CoolDown = dialog.CoolDown,
+						ProjDatas = CSystem.ExportDatas()
+					};
+					var text = JsonConvert.SerializeObject(skilldata, Formatting.Indented);
+					File.WriteAllText(dlg.FileName, text);
+				}
 			}
 		}
 
@@ -93,7 +105,7 @@ namespace SkillDesigner
 		{
 			var dlg = new OpenFileDialog();
 			dlg.CheckFileExists = true;
-			dlg.Title = "保存技能";
+			dlg.Title = "导入技能";
 			dlg.Filter = "json文件|*.json";
 			dlg.FileName = "Skill.json";
 			dlg.DefaultExt = ".json";

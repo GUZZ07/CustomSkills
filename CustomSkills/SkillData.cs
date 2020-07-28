@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace SkillDesigner.Libs
+namespace CustomSkill
 {
 	public class SkillData
 	{
-		public ProjData[] ProjDatas
+		public ProjData[] ProjDatas 
 		{
 			get;
 			set;
