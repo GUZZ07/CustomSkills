@@ -615,7 +615,7 @@ namespace SkillDesigner.Libs
 
 		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
 		{
-			writer.WriteValue(value.ToString());
+			writer.WriteValue(((Vector)value).ToString("0.0000"));
 		}
 	}
 }

@@ -1,0 +1,39 @@
+﻿<Window x:Class="SkillDesigner.Libs.AdvancedPropViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SkillDesigner.Libs"
+        mc:Ignorable="d"
+		x:Name="APViewer"
+		Closed="APViewer_Closed"
+		AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="Transparent"
+        Title="AdvancedPropViewer" Height="460" Width="588">
+	<Grid>
+		<Border BorderBrush="Aqua" BorderThickness="2" CornerRadius="10" MouseDown="Border_MouseDown">
+			<Border.Background>
+				<ImageBrush ImageSource="/Libs/BackgroundSmall.png" Stretch="UniformToFill"/>
+			</Border.Background>
+		</Border>
+		<Label Style="{StaticResource LabelEx}" Content="变速"
+			   Width="90" Height="50" BorderBrush="{x:Null}" FontSize="20"
+			   VerticalAlignment="Top" Margin="245,19,245,0"/>
+		<Button x:Name="Complete" Style="{StaticResource ButtonEx}" Width="90" Height="40"
+				VerticalAlignment="Top" Margin="164,399,334,0"
+				Click="Complete_Click"
+				Content="完成" FontSize="16"/>
+		<Button x:Name="AddNew" Style="{StaticResource ButtonEx}" Width="90" Height="40"
+				VerticalAlignment="Top" Margin="334,399,164,0"
+				Click="AddNew_Click"
+				Content="添加" FontSize="16"/>
+		<ScrollViewer Template="{StaticResource MyScrollViewer}" Margin="50,80">
+			<StackPanel x:Name="Panel">
+			</StackPanel>
+		</ScrollViewer>
+		<CheckBox Background="Transparent"
+				  Content="随玩家攻击方向旋转" Foreground="Aqua" FontSize="13"
+				  ToolTip="当玩家释放技能石会有一个攻击方向，使得该项被勾上的弹幕会跟着自动旋转相对位置与速度"
+				  DataContext="{Binding ElementName=APViewer}" IsChecked="{Binding RotateWithPlayer}"
+				  Width="140" Height="20" Margin="440,419,8,21"/>
+	</Grid>
+</Window>

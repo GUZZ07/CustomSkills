@@ -139,6 +139,7 @@ namespace SkillDesigner
 			{
 				focusedView = value;
 				focusedView?.Focus();
+				MainWindow.Instance.AdvancedViewer?.ViewChanged(focusedView);
 				OnFocusedViewChanged();
 			}
 		}
@@ -437,10 +438,6 @@ namespace SkillDesigner
 			view.Hitbox.Visibility = HideHitbox ? Visibility.Hidden : Visibility.Visible;
 			projViews.Add(view);
 			Grid.Children.Add(view);
-			if (FocusedView != null)
-			{
-				FocusedView.BorderBrush = null;
-			}
 			FocusedView = view;
 		}
 		public void ClearViews()
@@ -722,83 +719,6 @@ namespace SkillDesigner
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
 		}
 		public event PropertyChangedEventHandler PropertyChanged;
-		#endregion
-
-		#region Draw
-#if false
-		[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.Synchronized)]
-		public void Draw()
-		{
-			using var textureGraphics = Graphics.FromImage(texture);
-			textureGraphics.Clear(Color.FromArgb(0xA5, 255, 255));
-			// textureGraphics.DrawImage(Parent.BackgroundImage, 0, 0);
-			// textureGraphics.Clear(Color.FromArgb(80, 0xA5, 255, 255));
-			DrawProjViews(textureGraphics);
-			DrawMouseAxis(textureGraphics);
-			graphics.DrawImage(texture, 0, 0);
-		}
-
-		private void DrawBorder(Graphics graphics)
-		{
-			graphics.DrawRectangle(Pens.Yellow, 0, 0, Width - 1, Height - 1);
-		}
-
-		private void DrawMouseText(Graphics graphics, PointF mousePos, string text)
-		{
-			var font = Font;
-			var size = graphics.MeasureString(text, font);
-			var rect = new RectangleF(mousePos, size);
-			rect.X -= size.Width;
-			rect.Y -= size.Height;
-			graphics.DrawString(text, font, SystemBrushes.InfoText, rect);
-		}
-
-		private void DrawMouseAxis(Graphics graphics)
-		{
-			var relative = PointToScreen(Location);
-			var mousePos = MousePosition;
-			mousePos.X -= relative.X;
-			mousePos.Y -= relative.Y;
-			var pos = ReversedTransform(mousePos.X, mousePos.Y);
-			pen.Color = Color.FromArgb(200, 255, 0, 0);
-			if (InRange(pos))
-			{
-				graphics.DrawLine(pen, Transform(pos.X, 0), Transform(pos));
-				graphics.DrawLine(pen, Transform(0, pos.Y), Transform(pos));
-				DrawMouseText(graphics, mousePos, $"({pos.X / 16: 0.0},{pos.Y / 16: 0.0})");
-			}
-		}
-
-		private void PrepareXYAxis(Graphics graphics)
-		{
-			graphics.DrawLine(Pens.Black, Transform(LowX, 0), Transform(HighX, 0));
-			graphics.DrawLine(Pens.Black, Transform(0, LowY), Transform(0, HighY));
-			pen.Color = Color.FromArgb(255 / 3, 0, 0, 255);
-			for (int i = LowX; i < HighX; i++)
-			{
-				if (i % 16 == 0)
-				{
-					graphics.DrawLine(pen, Transform(i, LowY), Transform(i, HighY));
-				}
-			}
-			for (int i = LowY; i < HighY; i++)
-			{
-				if (i % 16 == 0)
-				{
-					graphics.DrawLine(pen, Transform(LowX, i), Transform(HighX, i));
-				}
-			}
-		}
-
-		private void DrawProjViews(Graphics graphics)
-		{
-			brush.Color = Color.Purple;
-			foreach (var view in projViews)
-			{
-				view.Draw(graphics, this, brush);
-			}
-		}
-#endif
 		#endregion
 	}
 }

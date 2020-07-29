@@ -300,6 +300,22 @@ namespace SkillDesigner
 			}
 		}
 		#region Events
+
+		private void PView_LostFocus(object sender, RoutedEventArgs args)
+		{
+			if (CSystem.FocusedView != this)
+			{
+				BorderBrush = null;
+			}
+		}
+
+		private void PView_GotFocus(object sender, RoutedEventArgs args)
+		{
+			if (CSystem.FocusedView == this)
+			{
+				BorderBrush = Brushes.Yellow;
+			}
+		}
 		public void PView_MouseMoveEx(object sender, Vector mousePos)
 		{
 			if (mouseDown && canMove && CSystem.FocusedView == this)
@@ -324,6 +340,10 @@ namespace SkillDesigner
 		}
 		private void PView_MouseUp(object sender, EventArgs args)
 		{
+			if (CSystem.FocusedView != null)
+			{
+				CSystem.FocusedView.BorderBrush = null;
+			}
 			CSystem.FocusedView = this;
 			BorderBrush = Brushes.Red;
 			canMove = false;

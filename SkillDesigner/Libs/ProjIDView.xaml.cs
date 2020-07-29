@@ -53,6 +53,5 @@ namespace SkillDesigner
 		{
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
 		}
-
 	}
 }

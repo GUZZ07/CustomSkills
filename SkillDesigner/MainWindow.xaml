@@ -43,9 +43,9 @@
 			<Style.Setters>
 				<Setter Property="Height" Value="40"/>
 				<Setter Property="Background" Value="Transparent"/>
-				<Setter Property="BorderBrush" Value="White"/>
+				<Setter Property="BorderBrush" Value="Aqua"/>
 				<Setter Property="BorderThickness" Value="1,1,1,1"/>
-				<Setter Property="Foreground" Value="White"/>
+				<Setter Property="Foreground" Value="Aqua"/>
 				<Setter Property="VerticalAlignment" Value="Top"/>
 				<Setter Property="VerticalContentAlignment" Value="Center"/>
 				<Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -82,17 +82,20 @@
 		</Grid.RowDefinitions>
 		<local:CoordinateSystem x:Name="CSystem"
 				Width="640" Height="640" Grid.ColumnSpan="2"/>
-		<Button x:Name="AddProj" FontSize="15" Margin="45,508,227,88" Style="{StaticResource MyButton}" Click="AddProj_Click" Width="88">
-			<Button.Content>添加</Button.Content>
-		</Button>
-		<Button x:Name="ClearProj" FontSize="15" Margin="227,508,45,88" Style="{StaticResource MyButton}" Click="ClearProj_Click" Width="88">
-			<Button.Content>清除</Button.Content>
+		<Button x:Name="Advanced" FontSize="15" Margin="227,372,45,224" Style="{StaticResource MyButton}" Click="Advanced_Click" Width="88">
+			<Button.Content>高级</Button.Content>
 		</Button>
 		<Button x:Name="DumpProjs" FontSize="15" Margin="227,440,45,156" Style="{StaticResource MyButton}" Click="DumpProjs_Click" Width="88">
 			<Button.Content>导出</Button.Content>
 		</Button>
 		<Button x:Name="ImportProjs" FontSize="15" Margin="45,440,227,156" Style="{StaticResource MyButton}" Click="ImportProjs_Click" Width="88">
 			<Button.Content>导入</Button.Content>
+		</Button>
+		<Button x:Name="AddProj" FontSize="15" Margin="45,508,227,88" Style="{StaticResource MyButton}" Click="AddProj_Click" Width="88">
+			<Button.Content>添加</Button.Content>
+		</Button>
+		<Button x:Name="ClearProj" FontSize="15" Margin="227,508,45,88" Style="{StaticResource MyButton}" Click="ClearProj_Click" Width="88">
+			<Button.Content>清除</Button.Content>
 		</Button>
 		<Button x:Name="ZoomUp" Margin="45,576,227,20" Style="{StaticResource MyButton}" Click="ZoomUp_Click" Width="88">
 			<Button.Content>+</Button.Content>
@@ -107,14 +110,14 @@
 				  Margin="0,367,237,255"
 				  Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Right" Width="86"/>
 		<StackPanel Grid.Column="2" Grid.ColumnSpan="2" Height="320" VerticalAlignment="Top">
-			<Label Style="{StaticResource PropViewLabel}" Content="弹幕类型" ToolTip="弹幕ID" MouseDoubleClick="ProjID_MouseDoubleClick"/>
+			<Label Style="{StaticResource PropViewLabel}" Content="弹幕类型" ToolTip="弹幕ID(请双击)" MouseDoubleClick="ProjID_MouseDoubleClick"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="伤害"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="击退" ToolTip="一个1~20之间的整数, 超过20与20等效"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="位置" ToolTip="以方块为单位"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="速率" ToolTip="每秒走过的方块长度"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="速度角" ToolTip="发射角度(角度制)"/>
-			<Label Style="{StaticResource PropViewLabel}" Content="生成延时" ToolTip="用于延时生成弹幕"/>
-			<Label Style="{StaticResource PropViewLabel}" Content="发射延时" ToolTip="用于延时发射弹幕"/>
+			<Label Style="{StaticResource PropViewLabel}" Content="生成延时" ToolTip="用于延时生成弹幕(单位为1/60秒)"/>
+			<Label Style="{StaticResource PropViewLabel}" Content="发射延时" ToolTip="用于延时发射弹幕(单位为1/60秒)"/>
 		</StackPanel>
 		<StackPanel Grid.Column="4" Grid.ColumnSpan="2" Height="320" VerticalAlignment="Top">
 			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVType, Mode=TwoWay}" x:Name="ProjIDValue"/>

@@ -17,6 +17,7 @@
 			MouseDown="PView_MouseDown"
 			MouseUp="PView_MouseUp"
 			PreviewKeyUp="PView_PreviewKeyUp"
+			GotFocus="PView_GotFocus" LostFocus="PView_LostFocus"
 			Focusable="True"
 	>
 	<UserControl.LayoutTransform>

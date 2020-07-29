@@ -40,12 +40,21 @@ namespace SkillDesigner.Libs
 			get;
 			set;
 		}
-		public float SpeedAngle
+		public double SpeedAngle
 		{
 			get;
 			set;
 		}
 		public float Speed
+		{
+			get;
+			set;
+		}
+		public ProjShift[] Shifts = { };
+		/// <summary>
+		/// 是否随着玩家攻击方向旋转(旋转角为从正右方转向玩家攻击方向)
+		/// </summary>
+		public bool RotateWithPlayer
 		{
 			get;
 			set;
@@ -65,5 +74,16 @@ namespace SkillDesigner.Libs
 				Knockback = Knockback
 			};
 		}
+	}
+
+
+	public struct ProjShift
+	{
+		public int Delay
+		{
+			get;
+			set;
+		}
+		public Vector Velocity;
 	}
 }

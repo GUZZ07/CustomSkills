@@ -30,6 +30,11 @@ namespace SkillDesigner
 			get;
 			private set;
 		}
+		public AdvancedPropViewer AdvancedViewer
+		{
+			get;
+			internal set;
+		}
 		//public CoordinateSystem CSystem { get; }
 		public MainWindow()
 		{
@@ -145,6 +150,22 @@ namespace SkillDesigner
 				Keyboard.Focus(ProjIDValue);
 				ProjIDValue.Text = selector.SelectedID.ToString();
 				Hahahaha.Focus();
+			}
+		}
+
+		private void Advanced_Click(object sender, RoutedEventArgs e)
+		{
+			if (AdvancedViewer == null)
+			{
+				if (CSystem.FocusedView == null)
+				{
+					MyMessageBox.Show("请先选择一个弹幕", "提示");
+					return;
+				}
+				var window = new AdvancedPropViewer();
+				window.Owner = this;
+				window.Show();
+				AdvancedViewer = window;
 			}
 		}
 	}
