@@ -16,8 +16,9 @@ using System.Windows;
 using WVector = System.Windows.Vector;
 using System.Timers;
 
-namespace SkillDesigner.Libs
+namespace SkillDesigner
 {
+	using Libs;
 	public partial class CoordinateSystem : UserControl, INotifyPropertyChanged
 	{
 		#region CSystem
@@ -112,7 +113,7 @@ namespace SkillDesigner.Libs
 
 		// private List<ProjView> projViews;
 
-		private const int ProjCount = 950;
+		public const int ProjCount = 950;
 
 		private const int gridLineCount = 100;
 
@@ -137,6 +138,7 @@ namespace SkillDesigner.Libs
 			set
 			{
 				focusedView = value;
+				focusedView?.Focus();
 				OnFocusedViewChanged();
 			}
 		}
@@ -432,8 +434,13 @@ namespace SkillDesigner.Libs
 		public void AddNewView()
 		{
 			var view = new ProjView(new ProjData { ProjType = 636 });
+			view.Hitbox.Visibility = HideHitbox ? Visibility.Hidden : Visibility.Visible;
 			projViews.Add(view);
 			Grid.Children.Add(view);
+			if (FocusedView != null)
+			{
+				FocusedView.BorderBrush = null;
+			}
 			FocusedView = view;
 		}
 		public void ClearViews()

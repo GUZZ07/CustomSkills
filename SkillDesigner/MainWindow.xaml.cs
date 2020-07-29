@@ -24,6 +24,7 @@ namespace SkillDesigner
 	public partial class MainWindow : Window
 	{
 		private ImageDrawing image;
+		private SkillData currentSkill;
 		public static MainWindow Instance
 		{
 			get;
@@ -33,6 +34,7 @@ namespace SkillDesigner
 		public MainWindow()
 		{
 			Instance = this;
+			currentSkill = new SkillData();
 			WindowStartupLocation = WindowStartupLocation.CenterScreen;
 			InitializeComponent();
 			//CSystem = new CoordinateSystem();
@@ -58,7 +60,7 @@ namespace SkillDesigner
 
 		private void ClearProj_Click(object sender, RoutedEventArgs args)
 		{
-			if (MessageBox.Show("确定要清除?", "提示", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+			if (MyMessageBox.ShowOKCancel("确定要清除?", "提示") == MessageBoxResult.OK)
 			{
 				CSystem.ClearViews();
 			}
@@ -75,6 +77,12 @@ namespace SkillDesigner
 		private void DumpProjs_Click(object sender, RoutedEventArgs args)
 		{
 			var dialog = new SkillInfoDialog();
+			dialog.SkillName = currentSkill.SkillName;
+			dialog.Author = currentSkill.Author;
+			dialog.SkillDescription = currentSkill.SkillDescription;
+			dialog.OnPropertyChanged(nameof(dialog.SkillName));
+			dialog.OnPropertyChanged(nameof(dialog.Author));
+			dialog.OnPropertyChanged(nameof(dialog.SkillDescription));
 			dialog.ShowDialog();
 			if (dialog.Yes)
 			{
@@ -89,13 +97,15 @@ namespace SkillDesigner
 				};
 				if (dlg.ShowDialog() == true)
 				{
-					SkillData skilldata = new SkillData
+					currentSkill = new SkillData
 					{
 						SkillName = dialog.SkillName,
 						CoolDown = dialog.CoolDown,
+						Author = dialog.Author,
+						SkillDescription = dialog.SkillDescription,
 						ProjDatas = CSystem.ExportDatas()
 					};
-					var text = JsonConvert.SerializeObject(skilldata, Formatting.Indented);
+					var text = JsonConvert.SerializeObject(currentSkill, Formatting.Indented);
 					File.WriteAllText(dlg.FileName, text);
 				}
 			}
@@ -116,13 +126,25 @@ namespace SkillDesigner
 				try
 				{
 					var text = File.ReadAllText(dlg.FileName);
-					var skilldata = JsonConvert.DeserializeObject<SkillData>(text);
-					CSystem.ImportDatas(skilldata.ProjDatas);
+					currentSkill = JsonConvert.DeserializeObject<SkillData>(text);
+					CSystem.ImportDatas(currentSkill.ProjDatas);
 				}
 				catch
 				{
-					MessageBox.Show("导入失败");
+					MyMessageBox.Show("导入失败", "提示");
 				}
+			}
+		}
+
+		private void ProjID_MouseDoubleClick(object sender, MouseButtonEventArgs args)
+		{
+			var selector = new ProjIDViewer();
+			selector.ShowDialog();
+			if (selector.SelectedID != null)
+			{
+				Keyboard.Focus(ProjIDValue);
+				ProjIDValue.Text = selector.SelectedID.ToString();
+				Hahahaha.Focus();
 			}
 		}
 	}

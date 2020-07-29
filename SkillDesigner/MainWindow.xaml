@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SkillDesigner" xmlns:Libs="clr-namespace:SkillDesigner.Libs"
+        xmlns:local="clr-namespace:SkillDesigner"
 		mc:Ignorable="d"
         Title="SkillDesigner" Height="678" Width="1016" MinHeight="678" MinWidth="1016" 
 		WindowStyle="SingleBorderWindow"
@@ -80,7 +80,7 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="640"></RowDefinition>
 		</Grid.RowDefinitions>
-		<Libs:CoordinateSystem x:Name="CSystem"
+		<local:CoordinateSystem x:Name="CSystem"
 				Width="640" Height="640" Grid.ColumnSpan="2"/>
 		<Button x:Name="AddProj" FontSize="15" Margin="45,508,227,88" Style="{StaticResource MyButton}" Click="AddProj_Click" Width="88">
 			<Button.Content>添加</Button.Content>
@@ -107,7 +107,7 @@
 				  Margin="0,367,237,255"
 				  Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Right" Width="86"/>
 		<StackPanel Grid.Column="2" Grid.ColumnSpan="2" Height="320" VerticalAlignment="Top">
-			<Label Style="{StaticResource PropViewLabel}" Content="弹幕类型" ToolTip="弹幕ID, 详见wiki"/>
+			<Label Style="{StaticResource PropViewLabel}" Content="弹幕类型" ToolTip="弹幕ID" MouseDoubleClick="ProjID_MouseDoubleClick"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="伤害"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="击退" ToolTip="一个1~20之间的整数, 超过20与20等效"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="位置" ToolTip="以方块为单位"/>
@@ -117,14 +117,14 @@
 			<Label Style="{StaticResource PropViewLabel}" Content="发射延时" ToolTip="用于延时发射弹幕"/>
 		</StackPanel>
 		<StackPanel Grid.Column="4" Grid.ColumnSpan="2" Height="320" VerticalAlignment="Top">
-			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVType, Mode=TwoWay}"></TextBox>
-			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVDamage, Mode=TwoWay}"></TextBox>
-			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVKnockback, Mode=TwoWay}"></TextBox>
-			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVPosition, Mode=TwoWay}"></TextBox>
-			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVSpeed, Mode=TwoWay}"></TextBox>
-			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVSpeedAngle, Mode=TwoWay}"></TextBox>
-			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVCD, Mode=TwoWay}"></TextBox>
-			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVLD, Mode=TwoWay}"></TextBox>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVType, Mode=TwoWay}" x:Name="ProjIDValue"/>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVDamage, Mode=TwoWay}"/>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVKnockback, Mode=TwoWay}"/>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVPosition, Mode=TwoWay}"/>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVSpeed, Mode=TwoWay}"/>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVSpeedAngle, Mode=TwoWay}"/>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVCD, Mode=TwoWay}"/>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVLD, Mode=TwoWay}"/>
 		</StackPanel>
 		<Button x:Name="Hahahaha" Width="20" Height="20" Margin="-63,430,683,190"/>
 	</Grid>

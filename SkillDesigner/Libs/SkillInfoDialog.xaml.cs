@@ -1,5 +1,8 @@
-﻿using System;
+﻿using SkillDesigner.Libs;
+using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +16,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SkillDesigner.Libs
+namespace SkillDesigner
 {
 	/// <summary>
 	/// SkillInfoDialog.xaml 的交互逻辑
 	/// </summary>
-	public partial class SkillInfoDialog : Window
+	public partial class SkillInfoDialog : Window, INotifyPropertyChanged
 	{
 		public string SkillName
+		{
+			get;
+			set;
+		}
+		public string Author
+		{
+			get;
+			set;
+		}
+		public string SkillDescription
 		{
 			get;
 			set;
@@ -36,17 +49,20 @@ namespace SkillDesigner.Libs
 			private set;
 		}
 
+		public event PropertyChangedEventHandler PropertyChanged;
+
 		public SkillInfoDialog()
 		{
 			WindowStartupLocation = WindowStartupLocation.CenterScreen;
 			InitializeComponent();
 		}
 
+
 		private void OK_Click(object sender, RoutedEventArgs args)
 		{
 			if (string.IsNullOrEmpty(SkillName))
 			{
-				MessageBox.Show("请填写技能名");
+				MyMessageBox.Show("请填写技能名", "提示");
 				return;
 			}
 			Yes = true;
@@ -66,9 +82,17 @@ namespace SkillDesigner.Libs
 			}
 		}
 
-		private void Dialog_MouseDown(object sender, MouseButtonEventArgs e)
+		private void Dialog_MouseDown(object sender, MouseButtonEventArgs args)
 		{
-			DragMove();
+			if (args.LeftButton == MouseButtonState.Pressed)
+			{
+				DragMove();
+			}
+		}
+
+		public void OnPropertyChanged(string propName)
+		{
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
 		}
 	}
 }

@@ -1,8 +1,7 @@
 {
   "profiles": {
     "SkillDesigner": {
-      "commandName": "Project",
-      "workingDirectory": "I:\\VS Solution\\gits\\CustomSkills\\SkillDesigner\\bin\\Debug\\net5.0"
+      "commandName": "Project"
     }
   }
 }

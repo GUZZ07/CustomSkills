@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SkillDesigner.Libs"
-             xmlns:System="clr-namespace:System;assembly=System.Runtime" x:Class="SkillDesigner.Libs.ProjView"
+             xmlns:System="clr-namespace:System;assembly=System.Runtime" x:Class="SkillDesigner.ProjView"
              mc:Ignorable="d"
 	        x:Name="PView"
 	        DataContext="{Binding ElementName=PView}"
@@ -16,6 +16,8 @@
 			BorderThickness="1,1,1,1"
 			MouseDown="PView_MouseDown"
 			MouseUp="PView_MouseUp"
+			PreviewKeyUp="PView_PreviewKeyUp"
+			Focusable="True"
 	>
 	<UserControl.LayoutTransform>
 		<TransformGroup>

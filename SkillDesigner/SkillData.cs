@@ -24,5 +24,21 @@ namespace SkillDesigner.Libs
 			get;
 			set;
 		}
+		public string Author
+		{
+			get;
+			set;
+		}
+		public string SkillDescription
+		{
+			get;
+			set;
+		}
+		public SkillData()
+		{
+			SkillName = string.Empty;
+			Author = string.Empty;
+			SkillDescription = string.Empty;
+		}
 	}
 }

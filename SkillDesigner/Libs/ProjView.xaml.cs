@@ -16,8 +16,9 @@ using WVector = System.Windows.Vector;
 using System.Windows.Input;
 using System.Runtime.CompilerServices;
 
-namespace SkillDesigner.Libs
+namespace SkillDesigner
 {
+	using Libs;
 	public partial class ProjView : UserControl, INotifyPropertyChanged
 	{
 		private struct ProjViewData
@@ -29,7 +30,15 @@ namespace SkillDesigner.Libs
 			public bool SpecialHeight;
 		}
 		private static ProjViewData[] ProjViewDatas;
-		private static TextureManager Textures;
+		private static TextureManager textures;
+		public static TextureManager Textures
+		{
+			get
+			{
+				LoadResources();
+				return textures;
+			}
+		}
 
 		public static bool LoadedResource
 		{
@@ -43,16 +52,38 @@ namespace SkillDesigner.Libs
 			{
 				return;
 			}
-			Textures = new TextureManager("Projs", 950);
+			textures = new TextureManager(Path.Combine(Environment.CurrentDirectory,"Projs"), 950);
 			ProjViewDatas = JsonConvert.DeserializeObject<ProjViewData[]>(Resource.PDatas);
 
 			ProjViewDatas[48].SpecialHeight = true;
 			ProjViewDatas[636].SpecialHeight = true;
 
-			ProjViewDatas[48].SpriteRotation = -Math.PI / 2;
-			ProjViewDatas[348].SpriteRotation = -Math.PI / 2;
-			ProjViewDatas[636].SpriteRotation = -Math.PI / 2;
-			ProjViewDatas[639].SpriteRotation = -Math.PI / 2;
+			int[] groupπover4 = { 21, 114, 115, 116, 132, 156, 157, 173, 263, 300, 301, 306, 451, 182, 697, 699, 707, 708, 938, 939, 940, 941, 942, 943, 944, 945 };
+			int[] groupπover2 = { 1, 2, 4, 5, 7, 8, 14, 20, 23, 36, 41, 48, 54, 55, 57, 58, 59, 60, 61, 62, 81, 82, 83, 84, 88, 89, 91, 93, 98, 100, 103, 104, 107, 110, 117, 120, 150, 151, 152, 158, 159, 160, 161, 163, 167, 168, 169, 170, 172, 174, 176, 180, 184, 186, 195, 207, 213, 214, 216, 217, 219, 220, 223, 224, 225, 239, 242, 245, 246, 250, 251, 252, 257, 259, 262, 264, 265, 267, 271, 273, 275, 276, 278, 279, 282, 283, 284, 285, 286, 287, 302, 303, 304, 310, 311, 322, 336, 337, 338, 339, 340, 341, 343, 345, 348, 349, 350, 355, 369, 374, 389, 415, 416, 417, 418, 427, 428, 429, 430, 431, 432, 437, 438, 439, 440, 442, 445, 448, 452, 457, 458, 460, 461, 462, 474, 477, 478, 479, 480, 481, 491, 493, 494, 495, 497, 498, 502, 507, 508, 509, 514, 520, 536, 573, 576, 577, 583, 584, 591, 592, 598, 599, 600, 607, 609, 610, 636, 638, 639, 640, 661, 664, 666, 668, 671, 680, 684, 686, 710, 711, 715, 716, 717, 718, 719, 763, 776, 780, 784, 787, 790, 793, 796, 799, 802, 803, 804, 805, 806, 807, 808, 809, 810, 819, 864, 870, 876, 920, 930, 931, 933, 935 };
+			int[] group3πover4 = { 46, 47, 49, 64, 66, 97, 105, 130, 153, 212, 342, 367, 368, 496, 662, 685, 730, 877, 878, 879 };
+			int[] groupπ = { 227 };
+			int[] group3πover2 = { 38, 631 };
+
+			foreach (var value in groupπover4)
+			{
+				ProjViewDatas[value].SpriteRotation = -Math.PI / 4;
+			}
+			foreach (var value in groupπover2)
+			{
+				ProjViewDatas[value].SpriteRotation = -Math.PI / 2;
+			}
+			foreach (var value in group3πover4)
+			{
+				ProjViewDatas[value].SpriteRotation = -3 * Math.PI / 4;
+			}
+			foreach (var value in groupπ)
+			{
+				ProjViewDatas[value].SpriteRotation = -Math.PI;
+			}
+			foreach (var value in group3πover2)
+			{
+				ProjViewDatas[value].SpriteRotation = -3 * Math.PI / 2;
+			}
 
 			ProjViewDatas[238].NoRotation = true;
 			ProjViewDatas[254].NoRotation = true;
@@ -103,10 +134,15 @@ namespace SkillDesigner.Libs
 			#endregion
 			LoadedResource = true;
 		}
+
 		public static void ReleaseResources()
 		{
 			Textures.Dispose();
 		}
+
+		public const int ProjCount = 950;
+
+
 		private ProjData projData;
 		private bool mouseDown;
 		private bool canMove;
@@ -193,7 +229,6 @@ namespace SkillDesigner.Libs
 		public ProjView(ProjData data)
 		{
 			InitializeComponent();
-			LoadResources();
 			VerticalAlignment = VerticalAlignment.Top;
 			HorizontalAlignment = HorizontalAlignment.Left;
 			Data = data;
@@ -295,6 +330,13 @@ namespace SkillDesigner.Libs
 			mouseDown = false;
 			mouseDownPos = null;
 			mouseDownPosSelf = null;
+		}
+		private void PView_PreviewKeyUp(object sender, KeyEventArgs args)
+		{
+			if (args.Key == Key.Delete)
+			{
+				CSystem.RemoveView(this);
+			}
 		}
 		#endregion
 	}

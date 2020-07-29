@@ -4,6 +4,62 @@
 			 xmlns:local="clr-namespace:SkillDesigner"
 			 StartupUri="MainWindow.xaml">
 	<Application.Resources>
-		 
+		 <Style x:Key="MBButton" TargetType="Button">
+			<Style.Setters>
+				<Setter Property="Width" Value="70"/>
+				<Setter Property="Height" Value="38"/>
+				<Setter Property="Foreground" Value="Aqua"/>
+				<Setter Property="FontSize" Value="12"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="Button">
+							<Border x:Name="border" CornerRadius="4" Background="{TemplateBinding Background}" BorderBrush="Aqua" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+								<TextBlock x:Name="Block" Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Normal" FontSize="{TemplateBinding FontSize}"/>
+							</Border>
+							<ControlTemplate.Triggers>
+								<Trigger Property="IsMouseOver" Value="True">
+									<Setter TargetName="border" Property="Background" Value="#5000FFFF"/>
+								</Trigger>
+								<Trigger Property="IsMouseOver" Value="False">
+									<Setter TargetName="border" Property="Background" Value="Transparent"/>
+								</Trigger>
+								<Trigger Property="IsPressed" Value="True">
+									<Setter TargetName="border" Property="Background" Value="#A000FFFF"/>
+								</Trigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style.Setters>
+		</Style>
+		<Style x:Key="MBLabel" TargetType="Label">
+			<Style.Setters>
+				<Setter Property="Foreground" Value="Aqua"/>
+				<Setter Property="Background" Value="Transparent"/>
+				<Setter Property="HorizontalContentAlignment" Value="Center"/>
+				<Setter Property="VerticalContentAlignment" Value="Center"/>
+				<Setter Property="Height" Value="27"/>
+				<Setter Property="FontSize" Value="15"/>
+			</Style.Setters>
+		</Style>
+		<Style x:Key="MBTextBlock" TargetType="TextBlock">
+			<Style.Setters>
+				<Setter Property="Foreground" Value="Aqua"/>
+				<Setter Property="TextAlignment" Value="Center"/>
+				<Setter Property="Height" Value="27"/>
+				<Setter Property="FontSize" Value="15"/>
+			</Style.Setters>
+		</Style>
+		<Style x:Key="MessageBoxStyle" TargetType="Window">
+			<Style.Setters>
+				<Setter Property="ShowInTaskbar" Value="False"/>
+				<Setter Property="WindowStyle" Value="None"/>
+				<Setter Property="ResizeMode" Value="NoResize"/>
+				<Setter Property="AllowsTransparency" Value="True"/>
+				<Setter Property="Background" Value="Transparent"/>
+				<Setter Property="Width" Value="300"/>
+				<Setter Property="Height" Value="180"/>
+			</Style.Setters>
+		</Style>
 	</Application.Resources>
 </Application>

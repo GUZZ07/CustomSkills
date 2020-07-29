@@ -6,7 +6,7 @@ using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace SkillDesigner.Libs
+namespace SkillDesigner
 {
 	public class TextureManager : IDisposable
 	{
@@ -36,7 +36,7 @@ namespace SkillDesigner.Libs
 		}
 		private void LoadProj(int i)
 		{
-			textures[i] = new BitmapImage(new Uri(Path.Combine(directory, i.ToString() + ".png"), UriKind.Relative));
+			textures[i] = new BitmapImage(new Uri(Path.Combine(directory, i.ToString() + ".png"), UriKind.Absolute));
 		}
 
 		public void Dispose()
