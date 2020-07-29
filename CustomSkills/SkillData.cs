@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace CustomSkill
+namespace CustomSkills
 {
 	public class SkillData
 	{

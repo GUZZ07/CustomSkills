@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using Microsoft.Xna.Framework;
 using Newtonsoft.Json;
 
-namespace CustomSkill
+namespace CustomSkills
 {
 	[TypeConverter(typeof(VectorConverter))]
 	[JsonConverter(typeof(VectorConverterJ))]
