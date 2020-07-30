@@ -381,6 +381,10 @@ namespace SkillDesigner
 				CSystem.OnPropertyChanged(nameof(CSystem.FVPosition));
 				args.Handled = true;
 			}
+			if (Keyboard.IsKeyDown(Key.LeftCtrl) && Keyboard.IsKeyDown(Key.C))
+			{
+				CSystem.ClipBoard = this;
+			}
 		}
 		private void PView_PreviewKeyUp(object sender, KeyEventArgs args)
 		{

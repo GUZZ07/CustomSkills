@@ -32,6 +32,7 @@
 		</TransformGroup>
 	</UserControl.RenderTransform>
 	<Rectangle x:Name="Hitbox"
+			   Visibility="Hidden"
 					Stroke="Yellow"
 					StrokeThickness="0.75"
 					HorizontalAlignment="Left"

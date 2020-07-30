@@ -129,6 +129,12 @@ namespace SkillDesigner
 			private set;
 		}
 
+		public ProjView ClipBoard
+		{
+			get;
+			set;
+		}
+
 		public ProjView FocusedView
 		{
 			get
@@ -272,6 +278,7 @@ namespace SkillDesigner
 				{
 					FocusedView.Data.SpeedAngle = (float)(value * Math.PI / 180);
 					FocusedView.DataChanged(false);
+					OnPropertyChanged(nameof(FVSpeedAngle));
 				}
 			}
 		}
@@ -614,10 +621,24 @@ namespace SkillDesigner
 		#region Events
 		private void CS_PreviewKeyDown(object sender, KeyEventArgs args)
 		{
-			if (args.Key == Key.Delete && FocusedView != null)
+			if (FocusedView != null)
 			{
-				FocusedView = null;
-				RemoveView(FocusedView);
+				if (args.Key == Key.Delete)
+				{
+					FocusedView = null;
+					RemoveView(FocusedView);
+				}
+				if (Keyboard.IsKeyDown(Key.LeftCtrl) && Keyboard.IsKeyDown(Key.C))
+				{
+					ClipBoard = focusedView;
+				}
+				else if (Keyboard.IsKeyDown(Key.LeftCtrl) && Keyboard.IsKeyDown(Key.V))
+				{
+					var view = new ProjView(FocusedView.Data.Clone());
+					view.Hitbox.Visibility = HideHitbox ? Visibility.Hidden : Visibility.Visible;
+					AddView(view);
+					FocusedView = view;
+				}
 			}
 		}
 

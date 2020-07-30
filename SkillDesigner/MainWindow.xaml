@@ -64,7 +64,6 @@
 				<Setter Property="HorizontalContentAlignment" Value="Center"/>
 			</Style.Setters>
 		</Style>
-
 	</Window.Resources>
 	<Window.Background>
 		<ImageBrush ImageSource="/Background.png" Stretch="UniformToFill"/>
@@ -106,7 +105,7 @@
 		<Button x:Name="ZoomDown" Margin="227,576,45,20" Style="{StaticResource MyButton}" Click="ZoomDown_Click" Width="88">
 			<Button.Content>-</Button.Content>
 		</Button>
-		<CheckBox Foreground="Aqua" Content="隐藏碰撞箱"
+		<CheckBox Foreground="Aqua" Content="隐藏碰撞箱" Visibility="Hidden"
 				  HorizontalContentAlignment="Stretch"
 				  VerticalContentAlignment="Stretch"
 				  IsChecked="{Binding HideHitbox}" DataContext="{Binding ElementName=CSystem}"
@@ -117,21 +116,29 @@
 			<Label Style="{StaticResource PropViewLabel}" Content="伤害"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="击退" ToolTip="一个1~20之间的整数, 超过20与20等效"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="位置" ToolTip="以方块为单位"/>
-			<Label Style="{StaticResource PropViewLabel}" Content="速率" ToolTip="每秒走过的方块长度"/>
-			<Label Style="{StaticResource PropViewLabel}" Content="速度角" ToolTip="发射角度(角度制)"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="生成延时" ToolTip="用于延时生成弹幕(单位为1/60秒)"/>
 			<Label Style="{StaticResource PropViewLabel}" Content="发射延时" ToolTip="用于延时发射弹幕(单位为1/60秒)"/>
+			<Label Style="{StaticResource PropViewLabel}" Content="速率" ToolTip="每秒走过的方块长度"/>
+			<Label Style="{StaticResource PropViewLabel}" Content="速度角" ToolTip="发射角度(角度制)"/>
 		</StackPanel>
 		<StackPanel Grid.Column="4" Grid.ColumnSpan="2" Height="320" VerticalAlignment="Top">
 			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVType, Mode=TwoWay}" x:Name="ProjIDValue"/>
 			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVDamage, Mode=TwoWay}"/>
 			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVKnockback, Mode=TwoWay}"/>
 			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVPosition, Mode=TwoWay}"/>
-			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVSpeed, Mode=TwoWay}"/>
-			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVSpeedAngle, Mode=TwoWay}"/>
 			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVCD, Mode=TwoWay}"/>
 			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVLD, Mode=TwoWay}"/>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVSpeed, Mode=TwoWay}"/>
+			<TextBox DataContext="{Binding ElementName=CSystem}" Style="{StaticResource PropViewTextBox}" Text="{Binding FVSpeedAngle, Mode=TwoWay}"/>
+
 		</StackPanel>
+		<Slider Width="260" Height="20" Grid.Column="3" Grid.ColumnSpan="2"
+				Minimum="0" Maximum="360"
+				DataContext="{Binding ElementName=CSystem}"
+				Value="{Binding FVSpeedAngle}"
+				ToolTip="速度角" Margin="58,334,58,286"
+				/>
 		<Button x:Name="Hahahaha" Width="20" Height="20" Margin="-63,430,683,190"/>
+		<Slider Grid.Column="4" HorizontalAlignment="Left" Margin="557,0,0,0" VerticalAlignment="Center" Width="120"/>
 	</Grid>
 </Window>
