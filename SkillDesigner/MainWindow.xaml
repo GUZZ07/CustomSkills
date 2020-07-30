@@ -82,6 +82,9 @@
 		</Grid.RowDefinitions>
 		<local:CoordinateSystem x:Name="CSystem"
 				Width="640" Height="640" Grid.ColumnSpan="2"/>
+		<Button x:Name="More" FontSize="15" Margin="45,372,227,224" Style="{StaticResource MyButton}" Click="More_Click" Width="88">
+			<Button.Content>更多</Button.Content>
+		</Button>
 		<Button x:Name="Advanced" FontSize="15" Margin="227,372,45,224" Style="{StaticResource MyButton}" Click="Advanced_Click" Width="88">
 			<Button.Content>高级</Button.Content>
 		</Button>
@@ -107,7 +110,7 @@
 				  HorizontalContentAlignment="Stretch"
 				  VerticalContentAlignment="Stretch"
 				  IsChecked="{Binding HideHitbox}" DataContext="{Binding ElementName=CSystem}"
-				  Margin="0,367,237,255"
+				  Margin="0,338,237,284"
 				  Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Right" Width="86"/>
 		<StackPanel Grid.Column="2" Grid.ColumnSpan="2" Height="320" VerticalAlignment="Top">
 			<Label Style="{StaticResource PropViewLabel}" Content="弹幕类型" ToolTip="弹幕ID(请双击)" MouseDoubleClick="ProjID_MouseDoubleClick"/>

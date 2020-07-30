@@ -15,7 +15,7 @@
 	<Grid>
 		<Border CornerRadius="20" BorderBrush="Aqua" BorderThickness="2">
 			<Border.Background>
-				<ImageBrush ImageSource="/Libs/BackgroundSmall.png"/>
+				<ImageBrush ImageSource="/Libs/BackgroundSmall.png" Stretch="UniformToFill"/>
 			</Border.Background>
 		</Border>
 		<Grid Margin="10,40,10,10">

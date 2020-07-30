@@ -237,6 +237,7 @@ namespace SkillDesigner
 
 		public void DataChanged(bool changeProjType)
 		{
+			var ppp = CoordinateSystem.PixelPerPoint;
 			var handler = PropertyChanged;
 			if (handler != null)
 			{
@@ -262,9 +263,9 @@ namespace SkillDesigner
 				{
 					origin = (0.5, 0.5);
 				}
-				Rotation.CenterX = origin.X * TextureWidth* CoordinateSystem.PixelPerPoint;
-				Rotation.CenterY = origin.Y * TextureHeight* CoordinateSystem.PixelPerPoint;
-				Translation.Y = (0.5 - origin.Y) * TextureHeight * CoordinateSystem.PixelPerPoint;
+				Rotation.CenterX = origin.X * TextureWidth * ppp;
+				Rotation.CenterY = origin.Y * TextureHeight * ppp;
+				Translation.Y = (0.5 - origin.Y) * TextureHeight * ppp;
 
 				double angle = TextureData.SpriteRotation;
 				if (!TextureData.NoRotation)
@@ -272,8 +273,8 @@ namespace SkillDesigner
 					angle += Data.SpeedAngle;
 				}
 
-				Scale.ScaleX = CoordinateSystem.PixelPerPoint;
-				Scale.ScaleY = CoordinateSystem.PixelPerPoint;
+				Scale.ScaleX = ppp;
+				Scale.ScaleY = ppp;
 				Rotation.Angle = -angle * 180 / Math.PI;
 				// Background.RelativeTransform = ProjRenderTransform;
 			}
@@ -351,11 +352,42 @@ namespace SkillDesigner
 			mouseDownPos = null;
 			mouseDownPosSelf = null;
 		}
+		private void PView_PreviewKeyDown(object sender, KeyEventArgs args)
+		{
+			bool moved = false;
+			if (Keyboard.IsKeyDown(Key.Up))
+			{
+				Data.Position += (0, 1);
+				moved = true;
+			}
+			if (Keyboard.IsKeyDown(Key.Down))
+			{
+				Data.Position -= (0, 1);
+				moved = true;
+			}
+			if (Keyboard.IsKeyDown(Key.Right))
+			{
+				Data.Position += (1, 0);
+				moved = true;
+			}
+			if (Keyboard.IsKeyDown(Key.Left))
+			{
+				Data.Position -= (1, 0);
+				moved = true;
+			}
+			if (moved)
+			{
+				DataChanged(false);
+				CSystem.OnPropertyChanged(nameof(CSystem.FVPosition));
+				args.Handled = true;
+			}
+		}
 		private void PView_PreviewKeyUp(object sender, KeyEventArgs args)
 		{
 			if (args.Key == Key.Delete)
 			{
 				CSystem.RemoveView(this);
+				return;
 			}
 		}
 		#endregion
