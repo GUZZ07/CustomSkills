@@ -81,6 +81,15 @@ namespace SkillDesigner
 				Keyboard.Focus(Hahahaha);
 			}
 		}
+		private void TextBox_PreviewKeyDown2(object sender, KeyEventArgs args)
+		{
+			if (args.Key == Key.Enter)
+			{
+				(sender as TextBox).AppendText("\r\n");
+				Keyboard.Focus(Hahahaha);
+				Keyboard.Focus(sender as TextBox);
+			}
+		}
 
 		private void Dialog_MouseDown(object sender, MouseButtonEventArgs args)
 		{

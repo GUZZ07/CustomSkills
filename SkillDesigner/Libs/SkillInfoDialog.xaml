@@ -66,7 +66,7 @@
 	<Grid>
 		<Border BorderBrush="Aqua" BorderThickness="1.25" CornerRadius="9">
 			<Border.Background>
-				<ImageBrush ImageSource="/Libs/BackgroundSmall.png"/>
+				<ImageBrush ImageSource="/Libs/BackgroundSmall.png" Stretch="UniformToFill"/>
 			</Border.Background>
 		</Border>
 		<Label Content="技能属性" 
@@ -88,7 +88,7 @@
 		<StackPanel Width="141" Margin="120,57,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="110">
 			<TextBox Style="{StaticResource ForTextBox}" DataContext="{Binding ElementName=Dialog}" Text="{Binding SkillName}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
 			<TextBox Style="{StaticResource ForTextBox}" DataContext="{Binding ElementName=Dialog}" Text="{Binding Author}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
-			<TextBox Style="{StaticResource ForTextBox}" DataContext="{Binding ElementName=Dialog}" Text="{Binding SkillDescription}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+			<TextBox Style="{StaticResource ForTextBox}" DataContext="{Binding ElementName=Dialog}" Text="{Binding SkillDescription}" PreviewKeyDown="TextBox_PreviewKeyDown2" AcceptsReturn="True"/>
 			<TextBox Style="{StaticResource ForTextBox}" DataContext="{Binding ElementName=Dialog}" Text="{Binding CoolDown}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
 		</StackPanel>
 		<Button x:Name="OK" Style="{StaticResource MyButton}" Content="确定" Margin="58,158,178,16" Click="OK_Click"/>
