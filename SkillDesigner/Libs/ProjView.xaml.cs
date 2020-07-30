@@ -159,7 +159,7 @@ namespace SkillDesigner
 		}
 		public CoordinateSystem CSystem
 		{
-			get => (CoordinateSystem)((FrameworkElement)Parent).Parent;
+			get => (Parent as FrameworkElement)?.Parent as CoordinateSystem;
 		}
 		public Vector ProjSize => ProjViewDatas[Data.ProjType].Size;
 		public ImageBrush Texture
@@ -303,7 +303,7 @@ namespace SkillDesigner
 
 		private void PView_LostFocus(object sender, RoutedEventArgs args)
 		{
-			if (CSystem.FocusedView != this)
+			if (CSystem?.FocusedView != this)
 			{
 				BorderBrush = null;
 			}
