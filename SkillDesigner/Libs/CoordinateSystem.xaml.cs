@@ -121,7 +121,7 @@ namespace SkillDesigner
 		private List<Line> verLines;
 		private List<ProjView> projViews;
 		private ProjView focusedView;
-		private bool hideHitbox;
+		private bool hideHitbox = true;
 
 		public static int TickCount
 		{
@@ -156,7 +156,7 @@ namespace SkillDesigner
 			set
 			{
 				hideHitbox = value;
-				foreach(var view in projViews)
+				foreach (var view in projViews)
 				{
 					view.Hitbox.Visibility = value ? Visibility.Hidden : Visibility.Visible;
 				}
